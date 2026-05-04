@@ -1,0 +1,87 @@
+# --------------------------------------------------
+# _quarto.yml — EventlyticsHub
+# --------------------------------------------------
+
+project:
+  type: website
+
+website:
+  title: "Event Analytics Hub"
+  site-url: https://www.eventlyticshub.com
+  page-navigation: true
+  open-graph: true
+  cookie-consent:
+    type: express
+    style: simple
+    palette: dark
+  search: true
+
+  navbar:
+    pinned: true
+
+  sidebar:
+    title: ""
+    style: docked
+    align: left
+    collapse-level: 2
+    contents:
+      - text: "Read the analysis"
+        href: blog.qmd
+      - text: "Explore the data"
+        href: explore.qmd
+      - text: "---"
+      - text: "About Me"
+        href: about.qmd
+      - text: "---"
+      - section: "Getting started"
+        contents:
+          - text: "What are events?"
+            href: guide/getting-started/what-are-events.qmd
+          - text: "Why event-driven?"
+            href: guide/getting-started/why-event-driven.qmd
+      - section: "Core concepts"
+        contents:
+          - text: "Event models"
+            href: "#"
+          - text: "Event types"
+            href: "#"
+          - text: "Streams vs snapshots"
+            href: "#"
+      - section: "Architecture"
+        contents:
+          - text: "Modern data stack"
+            href: "#"
+          - text: "R + Python interop"
+            href: "#"
+      - section: "Dashboards"
+        contents:
+          - text: "Dashboard design"
+            href: guide/dashboards/dashboard-design.qmd
+
+  page-footer:
+    left: "© 2026 Dan Manastireanu"
+    center: "R · Shiny · Quarto · Docker"
+    right: "Powered by [Quarto](https://quarto.org/)"
+
+format:
+  html:
+    page-layout: full
+    theme:
+      dark: [darkly, style/custom.scss]
+      light: [flatly, style/custom.scss]
+    toc: true
+    toc-location: body
+    toc-depth: 3
+    #grid:
+     #sidebar-width: 250px
+     #body-width: 900px
+     #margin-width: 0px
+     #gutter-width: 1.5rem
+    code-fold: show
+    code-copy: true
+    fontsize: 1rem
+    linestretch: 1.7
+
+execute:
+  freeze: auto
+  cache: false

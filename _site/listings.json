@@ -1,0 +1,14 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/2026-05-01-welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/explore.html",
+    "items": [
+      "/explore/event-explorer/index.html"
+    ]
+  }
+]

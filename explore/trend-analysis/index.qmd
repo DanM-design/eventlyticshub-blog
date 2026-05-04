@@ -1,0 +1,20 @@
+---
+title: "Trend Analysis"
+description: "Track event patterns and anomalies across configurable time windows."
+image: preview.png
+date: "2026-05-01"
+categories: [interactive, trends]
+draft: true
+---
+
+## Coming soon
+
+This dashboard will allow you to track event trends over time, detect
+anomalies, and compare patterns across different event sources.
+
+## Planned features
+
+- Configurable time windows (hourly, daily, weekly)
+- Anomaly detection with adjustable sensitivity
+- Comparison mode for multiple event types
+- Export to CSV and PNG

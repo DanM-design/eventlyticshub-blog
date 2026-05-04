@@ -1,0 +1,15 @@
+{
+  "hash": "e01fda3d7f21c758bd2dff1eccca5dbd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"What Are Events?\"\nsidebar: guide\n---\n\n## Defining Events in Analytics\n\nAn event is a record of something that happened at a specific point in time.\nEvery click, transaction, sensor reading, or status change can be captured as\nan event.\n\n## Anatomy of an Event\n\nAt minimum, an event has:\n\n- **Timestamp** — when it happened\n- **Type** — what kind of event it is (e.g., `page_view`, `purchase`, `alert`)\n- **Payload** — the data associated with the event\n\n\n::: {.cell}\n\n```{.r .cell-code}\nevent <- list(\n  timestamp = Sys.time(),\n  type = \"page_view\",\n  payload = list(\n    user_id = \"u_12345\",\n    page = \"/dashboard\",\n    duration_seconds = 45\n  )\n)\n\nstr(event)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nList of 3\n $ timestamp: POSIXct[1:1], format: \"2026-05-02 00:37:18\"\n $ type     : chr \"page_view\"\n $ payload  :List of 3\n  ..$ user_id         : chr \"u_12345\"\n  ..$ page            : chr \"/dashboard\"\n  ..$ duration_seconds: num 45\n```\n\n\n:::\n:::\n\n\n## Why Events Matter\n\nTraditional analytics asks \"what is the current state?\" Event analytics asks\n\"what happened, in what order, and why?\" This shift unlocks temporal analysis,\nfunnel tracking, and real-time monitoring.\n\n[Explore event data in the Dashboard →](http://localhost:3838){target=\"_blank\"}\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

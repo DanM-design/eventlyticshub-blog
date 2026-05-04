@@ -1,0 +1,12 @@
+---
+title: "Explore the data"
+listing:
+  contents: explore
+  sort: "date desc"
+  type: grid
+  categories: true
+  fields: [title, description, image, categories]
+  grid-columns: 2
+---
+
+Interactive Shiny dashboards where you can filter, visualize, and analyze event data yourself. Each app links back to related blog posts for context and methodology.

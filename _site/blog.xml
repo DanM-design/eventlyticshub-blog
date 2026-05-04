@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Event Analytics Hub</title>
+<link>https://www.eventlyticshub.com/blog.html</link>
+<atom:link href="https://www.eventlyticshub.com/blog.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.9.37</generator>
+<lastBuildDate>Fri, 01 May 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Welcome to Event Analytics Hub</title>
+  <dc:creator>Dan Manastireanu</dc:creator>
+  <link>https://www.eventlyticshub.com/posts/2026-05-01-welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="what-is-event-analytics-hub" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-event-analytics-hub">What is Event Analytics Hub?</h2>
+<p>Event Analytics Hub combines two things: written analysis and interactive exploration. Blog posts explain the concepts and show the key findings. Dashboards let you dig into the data yourself.</p>
+</section>
+<section id="how-the-blog-and-dashboards-connect" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-blog-and-dashboards-connect">How the Blog and Dashboards Connect</h2>
+<p>Every analysis on this blog links to an interactive dashboard where you can explore the data with your own filters. For example, here’s a simple summary of event counts by quarter:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">events <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(</span>
+<span id="cb1-4">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">period =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Q1"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Q2"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Q3"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Q4"</span>),</span>
+<span id="cb1-5">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">count =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">120</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">185</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">210</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">175</span>)</span>
+<span id="cb1-6">)</span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(events, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> period, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> count, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> period)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_col</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Event Count by Quarter"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Period"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Count"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span>)</span></code></pre></div></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://www.eventlyticshub.com/posts/2026-05-01-welcome/index_files/figure-html/quarterly-summary-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Want to filter this data by event type, source, or date range?</p>
+<p><a href="http://localhost:3838/?period=Q3" class="btn btn-primary" target="_blank">Open the Dashboard →</a></p>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next</h2>
+<p>Upcoming posts will cover event models, stream processing patterns, and dashboard design with R Shiny and <code>bslib</code>.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>news</category>
+  <category>events</category>
+  <guid>https://www.eventlyticshub.com/posts/2026-05-01-welcome/</guid>
+  <pubDate>Fri, 01 May 2026 04:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,31 @@
+---
+title: "Event dashboard design"
+---
+
+## Designing dashboards for event data
+
+Event dashboards differ from traditional BI dashboards. They need to handle
+temporal data, streaming updates, and user-driven exploration.
+
+## Key principles
+
+**Start with a question, not a chart.** Every dashboard panel should answer a
+specific question: "How many events occurred this quarter?" or "Which event
+types are trending?"
+
+**Time is the primary axis.** Event data is inherently temporal. The x-axis
+should almost always be time, with the ability to zoom in and out.
+
+**Filters drive exploration.** Users need to slice data by event type, source,
+time period, and custom attributes. Shiny's reactive model is ideal for this.
+
+## The EventlyticsHub dashboard
+
+The interactive dashboard linked from this blog uses R Shiny with `bslib` for
+theming. It demonstrates:
+
+- Period-based filtering via URL parameters (deep links from blog posts)
+- Reactive visualizations that update as filters change
+- Consistent visual theming with the blog
+
+[Open the dashboard →](http://localhost:3838){.explore-cta}

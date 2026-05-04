@@ -1,0 +1,17 @@
+{
+  "hash": "3ff24f1c0e1d712ae4fe95ebc8e62678",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome to Event Analytics Hub\"\ndescription: \"Introducing the platform — where blog posts meet interactive dashboards\"\nauthor: \"Dan Manastireanu\"\ndate: \"2026-05-01\"\ncategories: [news, events]\n---\n\n## What is Event Analytics Hub?\n\nEvent Analytics Hub combines two things: written analysis and interactive\nexploration. Blog posts explain the concepts and show the key findings.\nDashboards let you dig into the data yourself.\n\n## How the Blog and Dashboards Connect\n\nEvery analysis on this blog links to an interactive dashboard where you can\nexplore the data with your own filters. For example, here's a simple summary\nof event counts by quarter:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n\nevents <- data.frame(\n  period = c(\"Q1\", \"Q2\", \"Q3\", \"Q4\"),\n  count = c(120, 185, 210, 175)\n)\n\nggplot(events, aes(x = period, y = count, fill = period)) +\n  geom_col() +\n  labs(title = \"Event Count by Quarter\", x = \"Period\", y = \"Count\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/quarterly-summary-1.png){width=672}\n:::\n:::\n\n\nWant to filter this data by event type, source, or date range?\n\n[Open the Dashboard →](http://localhost:3838/?period=Q3){.btn .btn-primary target=\"_blank\"}\n\n## What's Next\n\nUpcoming posts will cover event models, stream processing patterns, and\ndashboard design with R Shiny and `bslib`.\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

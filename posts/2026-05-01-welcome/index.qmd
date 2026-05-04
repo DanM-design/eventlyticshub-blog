@@ -1,0 +1,46 @@
+---
+title: "Welcome to Event Analytics Hub"
+description: "Introducing the platform — where written analysis meets interactive exploration."
+author: "Dan Manastireanu"
+date: "2026-05-01"
+categories: [news, events]
+---
+
+## What is Event Analytics Hub?
+
+Event Analytics Hub combines two things: written analysis and interactive
+exploration. Blog posts explain the concepts and show the key findings.
+Dashboards let you dig into the data yourself.
+
+## How the blog and dashboards connect
+
+Every analysis on this blog links to an interactive dashboard where you can
+explore the data with your own filters. For example, here's a simple summary
+of event counts by quarter:
+
+```{r}
+#| label: quarterly-summary
+#| echo: true
+
+library(ggplot2)
+
+events <- data.frame(
+  period = c("Q1", "Q2", "Q3", "Q4"),
+  count = c(120, 185, 210, 175)
+)
+
+ggplot(events, aes(x = period, y = count, fill = period)) +
+  geom_col() +
+  labs(title = "Event count by quarter", x = "Period", y = "Count") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+Want to filter this data by event type, source, or date range?
+
+[Explore this data in the dashboard →](http://localhost:3838/?period=Q3){.explore-cta}
+
+## What's next
+
+Upcoming posts will cover event models, stream processing patterns, and
+dashboard design with R Shiny and `bslib`.

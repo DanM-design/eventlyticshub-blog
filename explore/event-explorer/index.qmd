@@ -1,0 +1,27 @@
+---
+title: "Event Explorer"
+description: "Filter and visualize event data by type, source, and time period."
+image: preview.png
+date: "2026-05-01"
+categories: [interactive, events]
+app-url: "http://localhost:3838"
+---
+
+## About this app
+
+Event Explorer lets you interactively filter and visualize event data. Select
+time periods, event types, and data sources to see patterns in real time.
+
+## How to use it
+
+The dashboard accepts URL parameters for deep linking from blog posts. For
+example, clicking a link like `?period=Q3` will pre-select the Q3 time period
+when the app loads.
+
+## Related posts
+
+- [Welcome to Event Analytics Hub](/posts/2026-05-01-welcome/)
+
+---
+
+[Open Event Explorer →](http://localhost:3838){.explore-cta}

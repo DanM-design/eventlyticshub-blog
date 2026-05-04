@@ -1,0 +1,42 @@
+---
+title: "What are events?"
+---
+
+## Defining events in analytics
+
+An event is a record of something that happened at a specific point in time.
+Every click, transaction, sensor reading, or status change can be captured as
+an event.
+
+## Anatomy of an event
+
+At minimum, an event has:
+
+- **Timestamp** — when it happened
+- **Type** — what kind of event (e.g., `page_view`, `purchase`, `alert`)
+- **Payload** — the data associated with the event
+
+```{r}
+#| label: event-example
+#| echo: true
+
+event <- list(
+  timestamp = Sys.time(),
+  type = "page_view",
+  payload = list(
+    user_id = "u_12345",
+    page = "/dashboard",
+    duration_seconds = 45
+  )
+)
+
+str(event)
+```
+
+## Why events matter
+
+Traditional analytics asks "what is the current state?" Event analytics asks
+"what happened, in what order, and why?" This shift unlocks temporal analysis,
+funnel tracking, and real-time monitoring.
+
+[Explore event data in the dashboard →](http://localhost:3838){.explore-cta}

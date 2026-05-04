@@ -1,0 +1,30 @@
+---
+title: "About"
+sidebar: false
+toc: false
+---
+
+## Event Analytics Hub
+
+Event Analytics Hub is a platform for exploring event-driven analytics — from
+core concepts to interactive dashboards.
+
+Every blog post links to an interactive Shiny application where you can test
+the concepts with real data. The gap between reading about analytics and
+doing analytics shouldn't exist.
+
+## Dan Manastireanu
+
+Data analytics professional focused on event-driven architectures, R, and the
+modern data stack. Building tools that make data exploration accessible and
+reproducible.
+
+[LinkedIn](https://www.linkedin.com/in/damanastireanu) |
+[Email](mailto:danmana21@gmail.com) |
+[GitHub](https://github.com/DanM-design)
+
+## Built with
+
+This platform is built with R, Shiny, Quarto, and Docker — deployed on a
+self-hosted server with Docker Swarm and Traefik. The blog renders to static
+HTML. The Shiny apps run in Docker containers. Both are open source.

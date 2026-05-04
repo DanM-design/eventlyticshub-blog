@@ -1,0 +1,28 @@
+---
+title: "Why event-driven analytics?"
+---
+
+## The limits of snapshot-based analytics
+
+Traditional analytics relies on periodic snapshots — daily reports, weekly
+aggregations, monthly summaries. This approach loses the sequence of events
+and makes it impossible to answer questions like "what happened between
+Tuesday and Thursday that caused the spike?"
+
+## Event-driven advantages
+
+Event-driven analytics preserves the full timeline. With event data you can:
+
+- **Track user journeys** step by step through a funnel
+- **Detect anomalies** in real time as they happen
+- **Replay history** to understand what led to an outcome
+- **Build flexible aggregations** at any time granularity
+
+## When to use event-driven analytics
+
+Event-driven approaches work best when timing and sequence matter — user
+behavior analysis, operational monitoring, IoT sensor data, and financial
+transaction tracking.
+
+For static, slowly-changing data (annual reports, census data), traditional
+snapshot approaches are simpler and sufficient.

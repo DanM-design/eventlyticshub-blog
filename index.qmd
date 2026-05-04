@@ -1,0 +1,55 @@
+---
+title: ""
+sidebar: false
+toc: false
+page-layout: full
+---
+
+```{=html}
+<div class="homepage-hero">
+  <div class="hero-tagline">Event-driven analytics</div>
+  <div class="hero-headline">Understand your data through events, patterns, and time.</div>
+  <div class="hero-description">A platform that pairs written analysis with interactive exploration. Blog posts tell the story. Shiny apps let you dig into the data yourself.</div>
+  <div class="path-buttons">
+    <a href="blog.html" class="path-card">
+      <div class="path-title">Read →</div>
+      <div class="path-subtitle">Articles, insights, and R code</div>
+    </a>
+    <a href="explore.html" class="path-card path-explore">
+      <div class="path-title">Explore →</div>
+      <div class="path-subtitle">Interactive Shiny dashboards</div>
+    </a>
+  </div>
+</div>
+
+<div class="homepage-bottom">
+  <div class="sidebar-preview">
+    <a href="guide/getting-started/what-are-events.html" class="sidebar-preview-item">
+      <div class="preview-name">Getting started</div>
+      <div class="preview-count">2 articles</div>
+    </a>
+    <a href="#" class="sidebar-preview-item">
+      <div class="preview-name">Core concepts</div>
+      <div class="preview-count">3 articles</div>
+    </a>
+    <a href="#" class="sidebar-preview-item">
+      <div class="preview-name">Architecture</div>
+      <div class="preview-count">3 articles</div>
+    </a>
+    <a href="guide/dashboards/dashboard-design.html" class="sidebar-preview-item accent">
+      <div class="preview-name">Dashboards</div>
+      <div class="preview-count">2 articles</div>
+    </a>
+  </div>
+  <div class="knowledge-cards-wrapper">
+    <div class="knowledge-card">
+      <div class="knowledge-label">Why this exists</div>
+      <div class="knowledge-text">Most analytics blogs show static charts and tell you to trust the conclusion. Here, every analysis links to a live dashboard where you can change the parameters, challenge the assumptions, and see what happens. The gap between reading about data and working with data shouldn't exist.</div>
+    </div>
+    <div class="knowledge-card">
+      <div class="knowledge-label">What you'll find</div>
+      <div class="knowledge-text">Event modeling patterns that work in production. Stream processing versus snapshot trade-offs with real benchmarks. Dashboard design principles that respect your time. R and Shiny techniques you can apply to your own data tomorrow.</div>
+    </div>
+  </div>
+</div>
+```
