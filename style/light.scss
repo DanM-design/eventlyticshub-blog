@@ -1,0 +1,38 @@
+/*-- scss:defaults --*/
+// LIGHT palette — EventlyticsHub
+// Loaded only into the light stylesheet (see _quarto.yml theme: light).
+// Same variable names as dark.scss — base.scss works with either.
+
+// Semantic palette
+$eh-bg:            #F7F7F7;
+$eh-surface:       #FFFFFF;
+$eh-border-subtle: #E2E2E2;
+$eh-border:        #D4D4D4;
+$eh-border-hover:  #AAAAAA;
+$eh-faint:         #8A8A8A;
+$eh-muted:         #8A8A8A;
+$eh-text:          #555555;
+$eh-strong:        #3D3D3D;
+$eh-heading:       #1A1A1A;
+$eh-accent:        #92400E;   // darker amber — readable on white
+$eh-accent-hover:  #78350F;
+$eh-code-bg:       #FFFFFF;
+
+// Bootstrap mappings
+$body-bg: $eh-bg;
+$body-color: $eh-text;
+$link-color: $eh-accent;
+$link-hover-color: $eh-accent-hover;
+$card-bg: $eh-surface;
+$card-border-color: $eh-border;
+$border-color: $eh-border-subtle;
+$primary: $eh-accent;
+$secondary: $eh-border;
+$navbar-bg: $eh-surface;
+$sidebar-bg: $eh-surface;
+$sidebar-fg: $eh-text;
+$sidebar-hl: $eh-strong;
+$code-bg: $eh-code-bg;
+$code-color: $eh-text;
+$code-block-bg: $eh-code-bg;
+$toc-active-border: $eh-accent;

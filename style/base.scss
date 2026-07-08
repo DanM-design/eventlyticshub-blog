@@ -1,0 +1,562 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+$font-family-sans-serif: 'DM Sans', system-ui, -apple-system, sans-serif !default;
+$font-family-monospace: 'DM Mono', 'Consolas', monospace !default;
+$headings-font-weight: 500 !default;
+$font-size-base: 1.05rem !default;
+$line-height-base: 1.7 !default;
+$border-radius: 8px !default;
+$border-radius-lg: 12px !default;
+
+/*-- scss:rules --*/
+
+// =====================================================
+// BASE — structure & sizes shared by dark and light.
+// Colors come exclusively from $eh-* variables defined
+// in style/dark.scss and style/light.scss. Never put a
+// hex color in this file.
+// =====================================================
+
+body {
+  background-color: $eh-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba($eh-accent, 0.25);
+  color: $eh-heading;
+}
+
+// ============================================
+// Navbar
+// ============================================
+
+.navbar {
+  background-color: $navbar-bg !important;
+  border-bottom: 0.5px solid $eh-border-subtle;
+  padding: 0.6rem 1.5rem;
+  min-height: auto;
+}
+
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $eh-heading !important;
+  letter-spacing: -0.3px;
+}
+
+#navbarCollapse {
+  display: none !important;
+}
+
+.quarto-navbar-tools .quarto-navigation-tool {
+  color: $eh-muted;
+  transition: color 0.2s ease;
+}
+
+.quarto-navbar-tools .quarto-navigation-tool:hover {
+  color: $eh-strong;
+}
+
+// ============================================
+// Breadcrumb — hide
+// ============================================
+
+.breadcrumb-container,
+nav.quarto-page-breadcrumbs,
+.quarto-page-breadcrumbs {
+  display: none !important;
+}
+
+// ============================================
+// Navigation sidebar (left) — scoped to the nav
+// sidebar ONLY. The old `.sidebar` selector also
+// hit the right margin sidebar, painting it as a
+// panel with a border (the stray vertical line).
+// ============================================
+
+#quarto-sidebar,
+.sidebar#quarto-sidebar {
+  background-color: $sidebar-bg !important;
+  border-right: 0.5px solid $eh-border-subtle;
+}
+
+// The right margin column is NOT a panel — keep it
+// transparent, borderless, part of the page.
+.sidebar.margin-sidebar,
+#quarto-margin-sidebar {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.sidebar-item .sidebar-item-text {
+  font-size: 0.9rem;
+  color: $sidebar-fg;
+  transition: color 0.15s ease;
+}
+
+.sidebar-item .sidebar-item-text:hover {
+  color: $sidebar-hl;
+}
+
+.sidebar-item.active .sidebar-item-text,
+.sidebar-item .sidebar-item-text.active {
+  color: $sidebar-hl;
+  background-color: rgba($eh-heading, 0.06);
+  border-radius: 4px;
+}
+
+// "Read the analysis" — first item
+.sidebar-menu-container > .list-unstyled > .sidebar-item:first-child .sidebar-item-text {
+  color: $eh-strong;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: $eh-border;
+  text-underline-offset: 3px;
+}
+
+// "Explore the data" — second item, accent
+.sidebar-menu-container > .list-unstyled > .sidebar-item:nth-child(2) .sidebar-item-text {
+  color: $eh-accent;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba($eh-accent, 0.4);
+  text-underline-offset: 3px;
+}
+
+.sidebar-divider {
+  border-color: $eh-border-subtle;
+  margin: 0.5rem 0;
+}
+
+.sidebar-item-section .sidebar-item-text {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $eh-muted;
+}
+
+// ============================================
+// TOC — native right margin column
+// ============================================
+
+#quarto-margin-sidebar {
+  #TOC, nav[role="doc-toc"] {
+    border-left: 1px solid $eh-border-subtle;
+    padding-left: 1rem;
+
+    #toc-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: $eh-text;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      color: $eh-muted;
+      font-size: 0.85rem;
+      padding: 0.15rem 0 0.15rem 0.75rem;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+    }
+
+    .nav-link.active {
+      color: $eh-strong;
+      border-left-color: $toc-active-border;
+    }
+
+    .nav-link:hover {
+      color: $eh-text;
+    }
+  }
+}
+
+// ============================================
+// Cards
+// ============================================
+
+.card,
+.quarto-listing-card {
+  background-color: $card-bg;
+  border: 0.5px solid $card-border-color;
+  border-radius: $border-radius;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover,
+.quarto-listing-card:hover {
+  border-color: $eh-border-hover;
+}
+
+.card-title,
+.listing-title {
+  color: $eh-heading;
+  font-weight: 500;
+}
+
+.card-text,
+.listing-description {
+  color: $eh-text;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+// ============================================
+// Blog listing — single column
+// ============================================
+
+.quarto-listing-default .metadata,
+.quarto-listing-default .listing-author {
+  display: none !important;
+}
+
+.quarto-listing-default .listing-item {
+  display: block !important;
+  background-color: $card-bg;
+  border: 0.5px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $eh-border-hover;
+  }
+}
+
+.quarto-listing-default .listing-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: $eh-heading;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.quarto-listing-default .listing-categories {
+  display: inline-flex;
+  gap: 0.35rem;
+  vertical-align: middle;
+}
+
+.quarto-listing-default .listing-date {
+  float: right;
+  color: $eh-faint;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.quarto-listing-default .listing-categories .listing-category {
+  background-color: rgba($eh-heading, 0.07);
+  color: $eh-text;
+  border: none;
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+}
+
+.quarto-listing-default .listing-description {
+  color: $eh-text;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  clear: both;
+}
+
+.quarto-listing-category {
+  text-align: left;
+}
+
+// ============================================
+// Content typography
+// ============================================
+
+.quarto-title h1.title {
+  color: $eh-heading;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  font-size: 2rem;
+}
+
+.quarto-title-meta {
+  color: $eh-faint;
+  font-size: 0.85rem;
+}
+
+.content h2 {
+  color: $eh-strong;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: none;
+}
+
+.content h3 {
+  color: $eh-strong;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.content p,
+.content ul,
+.content ol {
+  margin-bottom: 0.75rem;
+}
+
+pre.sourceCode {
+  background-color: $code-block-bg;
+  border: 0.5px solid $eh-border-subtle;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+code {
+  color: $code-color;
+  font-family: $font-family-monospace;
+  font-size: 0.95em;
+}
+
+.explore-cta {
+  display: inline-block;
+  color: $eh-accent;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $eh-accent-hover;
+  }
+}
+
+// ============================================
+// Homepage
+// ============================================
+
+.homepage-hero {
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 3vw, 2.5rem) 2rem;
+  max-width: min(1200px, 94vw);
+  margin: 0 auto;
+}
+
+.hero-tagline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $eh-faint;
+  margin-bottom: 1rem;
+}
+
+.hero-headline {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 500;
+  color: $eh-heading;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  color: $eh-text;
+  line-height: 1.7;
+  max-width: 620px;
+  margin-bottom: 2rem;
+}
+
+.path-buttons {
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.path-card {
+  flex: 1;
+  background-color: $card-bg;
+  border: 1px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 1.5rem 1.75rem;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $eh-border-hover;
+    text-decoration: none;
+  }
+}
+
+.path-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: $eh-heading;
+  margin-bottom: 0.25rem;
+}
+
+.path-subtitle {
+  font-size: 0.9rem;
+  color: $eh-muted;
+}
+
+.path-explore .path-title {
+  color: $eh-accent;
+}
+
+.homepage-bottom {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0 clamp(1.25rem, 3vw, 2.5rem) 2rem;
+  max-width: min(1200px, 94vw);
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.sidebar-preview {
+  width: 210px;
+  min-width: 210px;
+  background-color: $card-bg;
+  border: 0.5px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 1.125rem 0.875rem;
+  align-self: flex-start;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+.sidebar-preview-item {
+  display: block;
+  text-decoration: none;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  border-left: 2px solid $eh-border;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: rgba($eh-heading, 0.03);
+    text-decoration: none;
+  }
+
+  &.accent {
+    border-left-color: $eh-accent;
+  }
+}
+
+.preview-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: $eh-strong;
+}
+
+.preview-count {
+  font-size: 0.75rem;
+  color: $eh-faint;
+  margin-top: 2px;
+}
+
+.knowledge-cards-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.knowledge-card {
+  background-color: $card-bg;
+  border: 0.5px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 1.25rem 1.5rem;
+}
+
+.knowledge-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: $eh-strong;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.knowledge-text {
+  font-size: 0.95rem;
+  color: $eh-text;
+  line-height: 1.7;
+}
+
+// ============================================
+// Explore gallery
+// ============================================
+
+.explore-card {
+  .explore-preview {
+    height: 140px;
+    background: linear-gradient(135deg, $eh-border-subtle, $eh-border);
+    border-radius: $border-radius $border-radius 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .explore-link {
+    color: $eh-accent;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  &.coming-soon {
+    opacity: 0.6;
+    .explore-preview { background: linear-gradient(135deg, $eh-surface, $eh-border-subtle); }
+    .explore-link { color: $eh-faint; }
+  }
+}
+
+// ============================================
+// Footer
+// ============================================
+
+.quarto-footer,
+.nav-footer {
+  background-color: $navbar-bg;
+  border-top: 0.5px solid $eh-border-subtle;
+  color: $eh-faint;
+  font-size: 0.85rem;
+
+  a {
+    color: $eh-muted;
+  }
+}
+
+// ============================================
+// Mobile
+// ============================================
+
+@media (max-width: 991px) {
+  #quarto-sidebar {
+    z-index: 1040;
+    background-color: $sidebar-bg;
+  }
+
+  #quarto-sidebar-glass {
+    z-index: 1039;
+  }
+}

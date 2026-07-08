@@ -67,25 +67,16 @@ website:
 
 format:
   html:
-    # CHANGED 1: removed global `page-layout: full`.
-    # RWDS does NOT use it — they use a real grid (theirs: body 1000px,
-    # margin 250px). With page-layout: full active, any grid: settings
-    # are moot, which is why body-width changes never had an effect.
-    # Your index.qmd keeps page-layout: full in its own front matter,
-    # which is correct for the full-width hero — only the site-wide
-    # setting goes.
-    #
-    # CHANGED 2: grid is now real (was commented out).
     grid:
       sidebar-width: 250px
-      body-width: 1200px
-      margin-width: 0px
+      body-width: 1000px
+      margin-width: 300px
       gutter-width: 1.5rem
     theme:
-      dark: [darkly, style/custom.scss]
-      light: [flatly, style/custom.scss]
+      dark: [darkly, style/dark.scss, style/base.scss]
+      light: [flatly, style/light.scss, style/base.scss]
     toc: true
-    toc-location: body
+    toc-location: right
     toc-depth: 3
     code-fold: show
     code-copy: true

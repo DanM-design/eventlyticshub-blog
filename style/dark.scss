@@ -1,0 +1,37 @@
+/*-- scss:defaults --*/
+// DARK palette — EventlyticsHub
+// Loaded only into the dark stylesheet (see _quarto.yml theme: dark).
+
+// Semantic palette
+$eh-bg:            #0C0A09;
+$eh-surface:       #1C1917;
+$eh-border-subtle: #292524;
+$eh-border:        #44403C;
+$eh-border-hover:  #57534E;
+$eh-faint:         #78716C;   // dates, counts, small meta (>= 4.5:1 on bg)
+$eh-muted:         #78716C;
+$eh-text:          #A8A29E;
+$eh-strong:        #D6D3D1;
+$eh-heading:       #E7E5E4;
+$eh-accent:        #FBBF24;
+$eh-accent-hover:  #F59E0B;
+$eh-code-bg:       #1C1917;
+
+// Bootstrap mappings
+$body-bg: $eh-bg;
+$body-color: $eh-text;
+$link-color: $eh-accent;
+$link-hover-color: $eh-accent-hover;
+$card-bg: $eh-surface;
+$card-border-color: $eh-border;
+$border-color: $eh-border-subtle;
+$primary: $eh-accent;
+$secondary: $eh-border;
+$navbar-bg: $eh-surface;
+$sidebar-bg: $eh-surface;
+$sidebar-fg: $eh-text;
+$sidebar-hl: $eh-strong;
+$code-bg: $eh-code-bg;
+$code-color: $eh-text;
+$code-block-bg: $eh-code-bg;
+$toc-active-border: $eh-accent;

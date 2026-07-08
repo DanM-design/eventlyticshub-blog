@@ -46,8 +46,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-383541c8f5f630add277633a58240b94.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6b783dd11214ebbe87cfb72f19e420e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-dark-73380f9b793563690e9a0d6cbbcd088a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2de9b573cdcef2db085c1a42c932be8b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-84eb68e92374aeddcf18a187792bbe80.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -411,7 +411,16 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-limits-of-snapshot-based-analytics" id="toc-the-limits-of-snapshot-based-analytics" class="nav-link active" data-scroll-target="#the-limits-of-snapshot-based-analytics">The limits of snapshot-based analytics</a></li>
+  <li><a href="#event-driven-advantages" id="toc-event-driven-advantages" class="nav-link" data-scroll-target="#event-driven-advantages">Event-driven advantages</a></li>
+  <li><a href="#when-to-use-event-driven-analytics" id="toc-when-to-use-event-driven-analytics" class="nav-link" data-scroll-target="#when-to-use-event-driven-analytics">When to use event-driven analytics</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -435,15 +444,7 @@ cookieconsent.run({
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#the-limits-of-snapshot-based-analytics" id="toc-the-limits-of-snapshot-based-analytics">The limits of snapshot-based analytics</a></li>
-  <li><a href="#event-driven-advantages" id="toc-event-driven-advantages">Event-driven advantages</a></li>
-  <li><a href="#when-to-use-event-driven-analytics" id="toc-when-to-use-event-driven-analytics">When to use event-driven analytics</a></li>
-  </ul>
-</nav>
+
 <section id="the-limits-of-snapshot-based-analytics" class="level2">
 <h2 class="anchored" data-anchor-id="the-limits-of-snapshot-based-analytics">The limits of snapshot-based analytics</h2>
 <p>Traditional analytics relies on periodic snapshots — daily reports, weekly aggregations, monthly summaries. This approach loses the sequence of events and makes it impossible to answer questions like “what happened between Tuesday and Thursday that caused the spike?”</p>
