@@ -5,7 +5,7 @@
 $font-family-sans-serif: 'DM Sans', system-ui, -apple-system, sans-serif !default;
 $font-family-monospace: 'DM Mono', 'Consolas', monospace !default;
 $headings-font-weight: 500 !default;
-$font-size-base: 1rem !default;
+$font-size-base: 1.05rem !default;   // SIZE: was 1rem — matches yml fontsize
 $line-height-base: 1.7 !default;
 
 $body-bg: #0C0A09 !default;
@@ -39,9 +39,10 @@ $toc-active-border: #FBBF24 !default;
 $border-radius: 8px !default;
 $border-radius-lg: 12px !default;
 
-// Eliminate right edge gutter
-$grid-page-gutter-end: 0;
-$grid-body-gutter-end: 0.5rem;
+// REMOVED: $grid-page-gutter-end / $grid-body-gutter-end
+// These are not real Quarto grid variables in this form — they were dead
+// code. The grid is controlled by the `grid:` block in _quarto.yml.
+
 /*-- scss:rules --*/
 
 // ============================================
@@ -71,7 +72,7 @@ body {
 }
 
 .navbar-brand {
-  font-size: 1.1rem;
+  font-size: 1.2rem;               // SIZE: was 1.1rem
   font-weight: 500;
   color: #E7E5E4 !important;
   letter-spacing: -0.3px;
@@ -110,7 +111,7 @@ nav.quarto-page-breadcrumbs,
 }
 
 .sidebar-item .sidebar-item-text {
-  font-size: 0.85rem;
+  font-size: 0.9rem;               // SIZE: was 0.85rem
   color: $sidebar-fg;
   transition: color 0.15s ease;
 }
@@ -149,7 +150,7 @@ nav.quarto-page-breadcrumbs,
 }
 
 .sidebar-item-section .sidebar-item-text {
-  font-size: 0.8rem;
+  font-size: 0.85rem;              // SIZE: was 0.8rem
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #78716C;
@@ -164,15 +165,18 @@ nav.quarto-page-breadcrumbs,
 }
 
 // ============================================
-// Content — full width
+// Content — centered wide column
 // ============================================
+// SIZE/RESIZE FIX: the old rule stretched content from
+// body-content-start to *screen-end*, which piled all the surplus
+// space on the LEFT of ultra-wide screens (the lopsided void you saw).
+// Now the content stays inside the body column (1200px, from
+// _quarto.yml) and Quarto centers it symmetrically at every width.
 
 main.content.column-page-right,
 main.content.column-body {
-  grid-column: body-content-start / screen-end !important;
-  padding-right: 2rem;
+  grid-column: body-content-start / body-content-end !important;
 }
-
 
 // ============================================
 // Cards
@@ -188,7 +192,7 @@ main.content.column-body {
 
 .card:hover,
 .quarto-listing-card:hover {
-  border-color: #57534E;
+  border-color: #78716C;
 }
 
 .card-title,
@@ -200,7 +204,7 @@ main.content.column-body {
 .card-text,
 .listing-description {
   color: #A8A29E;
-  font-size: 0.85rem;
+  font-size: 0.95rem;              // SIZE: was 0.85rem
   line-height: 1.6;
 }
 
@@ -221,17 +225,17 @@ main.content.column-body {
   background-color: $card-bg;
   border: 0.5px solid $card-border-color;
   border-radius: $border-radius;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;         // SIZE: was 1rem 1.25rem
   margin-bottom: 0.75rem;
   transition: border-color 0.2s ease;
 
   &:hover {
-    border-color: #57534E;
+    border-color: #78716C;
   }
 }
 
 .quarto-listing-default .listing-title {
-  font-size: 1.1rem;
+  font-size: 1.25rem;              // SIZE: was 1.1rem
   font-weight: 500;
   color: #E7E5E4;
   display: block;
@@ -246,8 +250,8 @@ main.content.column-body {
 
 .quarto-listing-default .listing-date {
   float: right;
-  color: #57534E;
-  font-size: 0.75rem;
+  color: #78716C;
+  font-size: 0.8rem;               // SIZE: was 0.75rem
   line-height: 1.8;
 }
 
@@ -257,12 +261,12 @@ main.content.column-body {
   border: none;
   border-radius: 10px;
   padding: 2px 8px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;              // SIZE: was 0.7rem
 }
 
 .quarto-listing-default .listing-description {
   color: #A8A29E;
-  font-size: 0.85rem;
+  font-size: 0.95rem;              // SIZE: was 0.85rem
   line-height: 1.6;
   margin-top: 0.5rem;
   clear: both;
@@ -281,19 +285,19 @@ main.content.column-body {
     color: #E7E5E4;
     font-weight: 500;
     letter-spacing: -0.3px;
-    font-size: 1.6rem;
+    font-size: 2rem;               // SIZE: was 1.6rem — RWDS-scale article titles
   }
 }
 
 .quarto-title-meta {
-  color: #57534E;
-  font-size: 0.8rem;
+  color: #78716C;
+  font-size: 0.85rem;              // SIZE: was 0.8rem
 }
 
 .content h2 {
   color: #D6D3D1;
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 1.5rem;               // SIZE: was 1.25rem
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   padding-bottom: 0.4rem;
@@ -303,7 +307,7 @@ main.content.column-body {
 .content h3 {
   color: #D6D3D1;
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: 1.2rem;               // SIZE: was 1.05rem
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
 }
@@ -327,6 +331,7 @@ pre.sourceCode {
 code {
   color: $code-color;
   font-family: $font-family-monospace;
+  font-size: 0.95em;               // SIZE: keeps code proportional to larger body
 }
 
 .explore-cta {
@@ -343,23 +348,19 @@ code {
 }
 
 // ============================================
-// TOC (inline body)
-// ============================================
-
-// ============================================
 // TOC (inline body, floated right)
 // ============================================
 
 #TOC {
   border-left: 1px solid $border-color;
   padding-left: 1rem;
-  margin-left: 0.1rem;
+  margin-left: 1.5rem;             // SIZE: was 0.1rem — breathing room at new width
   margin-bottom: 1.5rem;
-  max-width: 220px;
+  max-width: 240px;                // SIZE: was 220px
   float: right;
 
   #toc-title {
-    font-size: 0.9rem;
+    font-size: 0.95rem;            // SIZE: was 0.9rem
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #A8A29E;
@@ -369,7 +370,7 @@ code {
 
   .nav-link {
     color: #78716C;
-    font-size: 0.8rem;
+    font-size: 0.85rem;            // SIZE: was 0.8rem
     padding-left: 0.75rem;
     border-left: 2px solid transparent;
     transition: all 0.15s ease;
@@ -385,38 +386,54 @@ code {
   }
 }
 
+// On narrow screens the floated TOC squeezes the text — stack it instead
+@media (max-width: 768px) {
+  #TOC {
+    float: none;
+    max-width: 100%;
+    margin-left: 0;
+    border-left: none;
+    border-bottom: 1px solid $border-color;
+    padding-left: 0;
+    padding-bottom: 1rem;
+  }
+}
+
 // ============================================
 // Homepage
 // ============================================
+// SIZE/RESIZE FIX: these two max-width: 800px caps were THE reason the
+// homepage stayed small no matter what body-width was set in the yml.
+// Now fluid: grows to 1200px, never exceeds 94% of the viewport.
 
 .homepage-hero {
-  padding: 3rem 2.5rem 2rem;
-  max-width: 800px;
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 3vw, 2.5rem) 2rem;
+  max-width: min(1200px, 94vw);    // SIZE: was 800px fixed
   margin: 0 auto;
 }
 
 .hero-tagline {
-  font-size: 0.7rem;
+  font-size: 0.75rem;              // SIZE: was 0.7rem
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #57534E;
+  color: #78716C;
   margin-bottom: 1rem;
 }
 
 .hero-headline {
-  font-size: 1.7rem;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);  // SIZE: was 1.7rem fixed — scales with viewport
   font-weight: 500;
   color: #E7E5E4;
   letter-spacing: -0.5px;
-  line-height: 1.3;
+  line-height: 1.25;
   margin-bottom: 1rem;
 }
 
 .hero-description {
-  font-size: 0.95rem;
+  font-size: 1.05rem;              // SIZE: was 0.95rem
   color: #A8A29E;
   line-height: 1.7;
-  max-width: 480px;
+  max-width: 620px;                // SIZE: was 480px
   margin-bottom: 2rem;
 }
 
@@ -434,26 +451,26 @@ code {
   background-color: $card-bg;
   border: 1px solid $card-border-color;
   border-radius: $border-radius;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 1.75rem;         // SIZE: was 1.25rem 1.5rem
   text-decoration: none;
   display: block;
   transition: border-color 0.2s ease;
 
   &:hover {
-    border-color: #57534E;
+    border-color: #78716C;
     text-decoration: none;
   }
 }
 
 .path-title {
-  font-size: 1.1rem;
+  font-size: 1.25rem;              // SIZE: was 1.1rem
   font-weight: 500;
   color: #E7E5E4;
   margin-bottom: 0.25rem;
 }
 
 .path-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.9rem;               // SIZE: was 0.8rem
   color: #78716C;
 }
 
@@ -464,8 +481,8 @@ code {
 .homepage-bottom {
   display: flex;
   gap: 0.9rem;
-  padding: 0 2.5rem 2rem;
-  max-width: 800px;
+  padding: 0 clamp(1.25rem, 3vw, 2.5rem) 2rem;
+  max-width: min(1200px, 94vw);    // SIZE: was 800px fixed
   margin: 0 auto;
 
   @media (max-width: 768px) {
@@ -474,8 +491,8 @@ code {
 }
 
 .sidebar-preview {
-  width: 180px;
-  min-width: 180px;
+  width: 210px;                    // SIZE: was 180px — proportional to wider layout
+  min-width: 210px;
   background-color: $card-bg;
   border: 0.5px solid $card-border-color;
   border-radius: $border-radius;
@@ -509,14 +526,14 @@ code {
 }
 
 .preview-name {
-  font-size: 0.8rem;
+  font-size: 0.9rem;               // SIZE: was 0.8rem
   font-weight: 500;
   color: #D6D3D1;
 }
 
 .preview-count {
-  font-size: 0.65rem;
-  color: #57534E;
+  font-size: 0.75rem;              // SIZE: was 0.65rem
+  color: #78716C;
   margin-top: 2px;
 }
 
@@ -531,11 +548,11 @@ code {
   background-color: $card-bg;
   border: 0.5px solid $card-border-color;
   border-radius: $border-radius;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;         // SIZE: was 1rem 1.25rem
 }
 
 .knowledge-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;              // SIZE: was 0.7rem
   text-transform: uppercase;
   letter-spacing: 1.2px;
   color: #D6D3D1;
@@ -544,7 +561,7 @@ code {
 }
 
 .knowledge-text {
-  font-size: 0.85rem;
+  font-size: 0.95rem;              // SIZE: was 0.85rem
   color: #A8A29E;
   line-height: 1.7;
 }
@@ -555,7 +572,7 @@ code {
 
 .explore-card {
   .explore-preview {
-    height: 120px;
+    height: 140px;                 // SIZE: was 120px
     background: linear-gradient(135deg, #292524, #44403C);
     border-radius: $border-radius $border-radius 0 0;
     display: flex;
@@ -565,7 +582,7 @@ code {
 
   .explore-link {
     color: $primary;
-    font-size: 0.8rem;
+    font-size: 0.85rem;            // SIZE: was 0.8rem
     font-weight: 500;
     text-decoration: none;
   }
@@ -584,8 +601,8 @@ code {
 .quarto-footer {
   background-color: $navbar-bg;
   border-top: 0.5px solid $border-color;
-  color: #57534E;
-  font-size: 0.75rem;
+  color: #78716C;
+  font-size: 0.85rem;              // SIZE: was 0.75rem
 
   a {
     color: #78716C;
@@ -636,22 +653,26 @@ code {
   .quarto-listing-default .listing-description { color: #777777; }
   .quarto-listing-default .listing-categories .listing-category { background-color: #F0F0F0; color: #777777; }
 
+  // BUG FIX (not a size change): this rule previously set the article
+  // title to #E7E5E4 — near-white text on a white background, invisible
+  // in light mode. Corrected to dark ink.
   .quarto-title h1.title {
-  color: #E7E5E4;
-  font-weight: 500;
-  letter-spacing: -0.3px;
-  font-size: 1.6rem;
-  margin-bottom: 1.9rem;
-}
+    color: #1A1A1A;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    font-size: 2rem;               // SIZE: matches dark mode
+    margin-bottom: 1.9rem;
+  }
 
-.content h2:first-of-type {
-  margin-top: 3rem;
-}
+  .content h2:first-of-type {
+    margin-top: 3rem;
+  }
   .content h2 { color: #3D3D3D; border-bottom-color: #E2E2E2; }
   .content h3 { color: #3D3D3D; }
   pre.sourceCode { background-color: #FFFFFF; border-color: #E2E2E2; }
   code { color: #555555; }
   .explore-cta { color: #92400E; &:hover { color: #78350F; } }
+  #TOC { border-left-color: #E2E2E2; }
   #TOC .nav-link { color: #AAAAAA; }
   #TOC .nav-link.active { color: #3D3D3D; border-left-color: #92400E; }
 
