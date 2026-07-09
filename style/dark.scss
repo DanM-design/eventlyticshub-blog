@@ -41,7 +41,14 @@ $eh-surface-quiet:  #131110;
 $eh-surface-lit:    #151210;
 $eh-border-hairline:#1F1B19;
 $eh-accent-dim:     #a4770e;
-$eh-chaos:          #292524;
-$eh-chaos-hi:       #57534E;
-$eh-chaos-dot:      #3b3633;
+$eh-chaos:          #3E3833;
+$eh-chaos-hi:       #6E675F;
+$eh-chaos-dot:      #55504A;
 $eh-accent-contrast:#412402;
+
+// Event-grid cells (dark)
+$eh-cell-u0:    #171412;
+$eh-cell-u1:    #221E1B;
+$eh-cell-u2:    #2E2925;
+$eh-cell-known: #FBBF24;
+$eh-cell-flash: #7A736B;   // unknown blink = brighter GREY, never amber

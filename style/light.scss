@@ -42,7 +42,14 @@ $eh-surface-quiet:  #FCFCFC;
 $eh-surface-lit:    #FFFFFF;
 $eh-border-hairline:#ECECEC;
 $eh-accent-dim:     #a16207;
-$eh-chaos:          #E4E1DE;
-$eh-chaos-hi:       #C8C4C0;
-$eh-chaos-dot:      #D8D4D0;
+$eh-chaos:          #C9C4BE;
+$eh-chaos-hi:       #9B958D;
+$eh-chaos-dot:      #B3ADA6;
 $eh-accent-contrast:#FFF7E8;
+
+// Event-grid cells (light)
+$eh-cell-u0:    #ECE9E4;
+$eh-cell-u1:    #DFDAD3;
+$eh-cell-u2:    #CCC5BC;
+$eh-cell-known: #D97706;   // mid amber - readable square on white
+$eh-cell-flash: #8A847C;

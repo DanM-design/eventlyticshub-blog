@@ -286,11 +286,16 @@ nav.quarto-page-breadcrumbs,
 
   .body { flex: 1; }
 
+  .body { order: 1; }
+
   .metadata {
+    order: 2;
     font-family: $font-family-monospace;
     font-size: 0.8rem;
     color: $eh-faint;
     flex-basis: auto;
+    text-align: right;
+    white-space: nowrap;
   }
 
   .listing-title a { color: $eh-heading; text-decoration: none; }
@@ -607,7 +612,7 @@ code {
 
 .eh-hero-row {
   display: grid;
-  grid-template-columns: minmax(300px, 0.9fr) minmax(320px, 1.1fr);
+  grid-template-columns: minmax(320px, 1.2fr) minmax(280px, 1fr);
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
   margin-top: 1.5rem;
@@ -662,36 +667,13 @@ h1.eh-headline {
 
 .eh-hero-visual {
   min-width: 0;
+  max-width: 420px;
+  justify-self: end;
+  width: 100%;
+
+  @media (max-width: 900px) { justify-self: center; }
 }
 
-.eh-hero-svg { width: 100%; height: auto; display: block; }
-
-// SVG palette via tokens
-.eh-hero-svg {
-  .eh-mono { font-family: $font-family-monospace; }
-  .eh-chaos { stroke: $eh-chaos; fill: none; }
-  .eh-chaos-hi { stroke: $eh-chaos-hi; fill: none; }
-  .eh-chaos-dot { fill: $eh-chaos-dot; }
-  .eh-mover { fill: $eh-chaos-dot; }
-  .eh-fill-accent { fill: $eh-accent; }
-  .eh-ring { stroke: $eh-accent-dim; }
-  .eh-entry { stroke: rgba($eh-accent, 0.3); }
-  .eh-dw { fill: $eh-surface-lit; stroke: $eh-border-hover; stroke-width: 1; }
-  .eh-dw-line { stroke: $eh-border-subtle; stroke-width: 1; }
-  .eh-dw-title { fill: $eh-accent-dim; }
-  .eh-slot { stroke: $eh-border-hover; }
-  .eh-t-text { fill: $eh-text; }
-  .eh-t-muted { fill: $eh-muted; }
-  .eh-t-faint { fill: $eh-faint; }
-  .eh-t-accent { fill: $eh-accent; }
-  .eh-t-accent-dim { fill: $eh-accent-dim; }
-  .eh-static { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .eh-hero-svg .eh-anim { display: none; }
-  .eh-hero-svg .eh-static { display: block; }
-}
 
 // CTA row — offer only; the ask lives at the bottom of the page
 .eh-cta-row {
@@ -762,7 +744,8 @@ h1.eh-headline {
 }
 
 // Listing: first item is the featured one (L3), rest stay quiet (L2)
-.eh-section .quarto-listing-default {
+.eh-section .quarto-listing-default,
+.eh-featured-river {
   .listing-date, .listing-category { font-family: $font-family-monospace; }
 
   .quarto-post:first-child,
@@ -879,4 +862,159 @@ h1.eh-headline {
   font-size: 0.93rem;
   color: $eh-text;
   line-height: 1.62;
+}
+
+
+// Manifesto band — shared observation, large human voice
+.eh-manifesto {
+  max-width: min(1000px, 92vw);
+  margin: 0 auto;
+  padding: 2.25rem clamp(1.25rem, 3vw, 2.5rem);
+  border-top: 0.5px solid $eh-border-hairline;
+  text-align: center;
+}
+
+.eh-manifesto-line {
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 500;
+  color: $eh-heading;
+  line-height: 1.5;
+  max-width: 780px;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
+.eh-manifesto-accent { color: $eh-accent; }
+
+// Follow strip — slim, machine voice
+.eh-follow {
+  max-width: min(1000px, 92vw);
+  margin: 0 auto;
+  padding: 0.8rem clamp(1.25rem, 3vw, 2.5rem);
+  border-top: 0.5px solid $eh-border-hairline;
+  text-align: center;
+  font-family: $font-family-monospace;
+  font-size: 0.8rem;
+
+  a { color: $eh-muted; text-decoration: none; &:hover { color: $eh-accent; } }
+  .eh-follow-sep { color: $eh-faint; margin: 0 0.75rem; }
+}
+
+
+// Event-field grid: known vs unknown at a glance
+.eh-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 4px;
+}
+
+.eh-cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  transition: background-color 0.45s ease;
+}
+
+.eh-cell-u0 { background-color: $eh-cell-u0; }
+.eh-cell-u1 { background-color: $eh-cell-u1; }
+.eh-cell-u2 { background-color: $eh-cell-u2; }
+.eh-cell-known { background-color: $eh-cell-known; }
+.eh-cell-flash { background-color: $eh-cell-flash !important; }
+
+.eh-legend {
+  display: flex;
+  gap: 1.4rem;
+  margin-top: 0.9rem;
+  padding-top: 0.6rem;
+  border-top: 0.5px solid $eh-border-subtle;
+  font-family: $font-family-monospace;
+  font-size: 0.82rem;
+  color: $eh-strong;
+}
+
+.eh-legend-item { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+.eh-swatch {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.eh-swatch-known { background-color: $eh-cell-known; }
+.eh-swatch-unknown { background-color: $eh-cell-u2; border: 0.5px solid $eh-border; }
+
+.eh-viz-caption {
+  margin-top: 0.35rem;
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  color: $eh-faint;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eh-cell { transition: none; }
+}
+
+
+// Blog page (read) — page head, reading measure, river polish
+.eh-page-head {
+  max-width: 780px;
+  margin: 0.5rem 0 1.75rem;
+}
+
+h1.eh-page-title {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: $eh-heading;
+  letter-spacing: -0.3px;
+  margin: 0.3rem 0 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+.eh-page-sub {
+  font-size: 0.98rem;
+  color: $eh-text;
+  line-height: 1.6;
+  max-width: 640px;
+  text-wrap: pretty;
+}
+
+.eh-featured-river {
+  max-width: 780px;
+
+  .listing-title { font-size: 1.3rem; }
+
+  .listing-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .listing-reading-time {
+    font-family: $font-family-monospace;
+    font-size: 0.78rem;
+    color: $eh-faint;
+  }
+}
+
+// Category filter (margin column) — mono chips
+.quarto-listing-category-title {
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $eh-muted;
+}
+
+.quarto-listing-category .category {
+  font-family: $font-family-monospace;
+  font-size: 0.82rem;
+  color: $eh-text;
+  padding: 0.15rem 0;
+  cursor: pointer;
+
+  &:hover { color: $eh-accent; }
+  &.active { color: $eh-accent; }
 }
