@@ -602,27 +602,35 @@ code {
 .eh-hero {
   max-width: min(1200px, 94vw);
   margin: 0 auto;
-  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem) 3rem;
-  text-align: center;
+  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.25rem, 3vw, 2.5rem) 2rem;
+  display: grid;
+  grid-template-columns: minmax(320px, 1.05fr) minmax(300px, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    .eh-cta-row { justify-content: center; }
+  }
 }
 
 .eh-eyebrow {
   font-family: $font-family-monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: $eh-accent;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 h1.eh-headline {
-  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
   font-weight: 500;
   color: $eh-heading;
-  line-height: 1.28;
-  letter-spacing: -0.5px;
-  max-width: 720px;
-  margin: 0 auto 0.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  margin: 0 0 0.6rem;
   border: none;
   padding: 0;
   text-wrap: balance;
@@ -632,14 +640,13 @@ h1.eh-headline {
 
 .eh-nameline {
   font-family: $font-family-monospace;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: $eh-muted;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .eh-hero-visual {
-  max-width: 760px;
-  margin: 0 auto;
+  min-width: 0;
 }
 
 .eh-hero-svg { width: 100%; height: auto; display: block; }
@@ -674,9 +681,9 @@ h1.eh-headline {
 // CTA row — offer only; the ask lives at the bottom of the page
 .eh-cta-row {
   display: flex;
-  justify-content: center;
-  gap: 0.9rem;
-  margin-top: 2rem;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
   flex-wrap: wrap;
 }
 
@@ -685,8 +692,8 @@ h1.eh-headline {
   background-color: $card-bg;
   border: 1px solid $card-border-color;
   border-radius: $border-radius;
-  padding: 0.8rem 1.6rem;
-  min-width: 200px;
+  padding: 0.65rem 1.25rem;
+  min-width: 175px;
   text-align: center;
   text-decoration: none;
   transition: border-color 0.2s ease;
@@ -726,7 +733,7 @@ h1.eh-headline {
 .eh-section {
   max-width: min(1000px, 92vw);
   margin: 0 auto;
-  padding: 3.5rem clamp(1.25rem, 3vw, 2.5rem);
+  padding: 2rem clamp(1.25rem, 3vw, 2.5rem) 2.25rem;
   border-top: 0.5px solid $eh-border-hairline;
 }
 
@@ -736,7 +743,7 @@ h1.eh-headline {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: $eh-muted;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 // Listing: first item is the featured one (L3), rest stay quiet (L2)
@@ -760,7 +767,7 @@ h1.eh-headline {
 .eh-about {
   max-width: min(1000px, 92vw);
   margin: 0 auto;
-  padding: 3rem clamp(1.25rem, 3vw, 2.5rem) 4rem;
+  padding: 2rem clamp(1.25rem, 3vw, 2.5rem) 2.75rem;
   border-top: 0.5px solid $eh-border-hairline;
   display: flex;
   gap: 1.5rem;
@@ -771,8 +778,8 @@ h1.eh-headline {
 }
 
 .eh-about-photo {
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   border: 0.5px solid $eh-border;
@@ -786,4 +793,70 @@ h1.eh-headline {
   color: $eh-text;
   line-height: 1.65;
   margin-bottom: 0.9rem;
+}
+
+
+// Start-here guide links (L1 quiet)
+.eh-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.75rem;
+}
+
+.eh-guide-card {
+  display: block;
+  background-color: $eh-surface-quiet;
+  border: 0.5px solid $eh-border-hairline;
+  border-radius: $border-radius;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+
+  &:hover { border-color: $eh-border-hover; text-decoration: none; }
+}
+
+.eh-guide-cat {
+  display: block;
+  font-family: $font-family-monospace;
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $eh-faint;
+  margin-bottom: 0.25rem;
+}
+
+.eh-guide-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $eh-strong;
+}
+
+// Knowledge cards (L1 quiet)
+.eh-know {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.75rem;
+}
+
+.eh-know-card {
+  background-color: $eh-surface-quiet;
+  border: 0.5px solid $eh-border-hairline;
+  border-radius: $border-radius;
+  padding: 1rem 1.25rem;
+}
+
+.eh-know-label {
+  font-family: $font-family-monospace;
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: $eh-strong;
+  margin-bottom: 0.4rem;
+}
+
+.eh-know-text {
+  font-size: 0.9rem;
+  color: $eh-text;
+  line-height: 1.6;
 }
