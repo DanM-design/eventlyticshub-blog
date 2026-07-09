@@ -600,19 +600,34 @@ code {
 // =====================================================
 
 .eh-hero {
-  max-width: min(1200px, 94vw);
+  max-width: min(1440px, 96vw);
   margin: 0 auto;
-  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.25rem, 3vw, 2.5rem) 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem) 2rem;
+}
+
+.eh-hero-row {
   display: grid;
-  grid-template-columns: minmax(320px, 1.05fr) minmax(300px, 1fr);
+  grid-template-columns: minmax(300px, 0.9fr) minmax(320px, 1.1fr);
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
+  margin-top: 1.5rem;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     text-align: center;
     .eh-cta-row { justify-content: center; }
   }
+}
+
+.eh-hero-line {
+  font-size: 0.98rem;
+  color: $eh-text;
+  line-height: 1.6;
+  max-width: 460px;
+  margin: 0.6rem 0 0;
+  text-wrap: pretty;
+
+  @media (max-width: 900px) { margin-inline: auto; }
 }
 
 .eh-eyebrow {
@@ -625,12 +640,12 @@ code {
 }
 
 h1.eh-headline {
-  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
   font-weight: 500;
   color: $eh-heading;
-  line-height: 1.3;
+  line-height: 1.25;
   letter-spacing: -0.4px;
-  margin: 0 0 0.6rem;
+  margin: 0;
   border: none;
   padding: 0;
   text-wrap: balance;
@@ -754,9 +769,11 @@ h1.eh-headline {
   .listing-item:first-child {
     background-color: $eh-surface-lit;
     border: 1px solid $eh-border-hover;
-    padding: 1.5rem 1.75rem;
+    padding: 1.15rem 1.4rem;
 
-    .listing-title { font-size: 1.35rem; }
+    .listing-title { font-size: 1.25rem; margin-bottom: 0.3rem; }
+    .listing-description { margin-top: 0.4rem; margin-bottom: 0; }
+    .listing-categories { margin-bottom: 0; }
   }
 
   .quarto-post:not(:first-child) .listing-description,
@@ -805,14 +822,15 @@ h1.eh-headline {
 
 .eh-guide-card {
   display: block;
-  background-color: $eh-surface-quiet;
-  border: 0.5px solid $eh-border-hairline;
+  background-color: $card-bg;
+  border: 0.5px solid $card-border-color;
   border-radius: $border-radius;
-  padding: 0.85rem 1rem;
+  padding: 0.8rem 1rem;
   text-decoration: none;
   transition: border-color 0.2s ease;
 
-  &:hover { border-color: $eh-border-hover; text-decoration: none; }
+  &:hover { border-color: $eh-border-hover; text-decoration: none;
+    .eh-guide-title::after { color: $eh-accent; } }
 }
 
 .eh-guide-cat {
@@ -827,9 +845,11 @@ h1.eh-headline {
 
 .eh-guide-title {
   display: block;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: $eh-strong;
+  color: $eh-heading;
+
+  &::after { content: " \2192"; color: $eh-faint; transition: color 0.2s ease; }
 }
 
 // Knowledge cards (L1 quiet)
@@ -840,8 +860,8 @@ h1.eh-headline {
 }
 
 .eh-know-card {
-  background-color: $eh-surface-quiet;
-  border: 0.5px solid $eh-border-hairline;
+  background-color: $card-bg;
+  border: 0.5px solid $eh-border-subtle;
   border-radius: $border-radius;
   padding: 1rem 1.25rem;
 }
@@ -856,7 +876,7 @@ h1.eh-headline {
 }
 
 .eh-know-text {
-  font-size: 0.9rem;
+  font-size: 0.93rem;
   color: $eh-text;
-  line-height: 1.6;
+  line-height: 1.62;
 }

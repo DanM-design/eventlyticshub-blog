@@ -1,5 +1,6 @@
 ---
 title: ""
+sidebar: false
 toc: false
 page-layout: full
 listing:
@@ -13,10 +14,12 @@ listing:
 
 ```{=html}
 <section class="eh-hero">
+  <div class="eh-eyebrow">event-driven analytics</div>
+  <h1 class="eh-headline">Your warehouse maps the known territory. <span class="eh-headline-accent">Now, let&rsquo;s expand what you can see.</span></h1>
+  <div class="eh-hero-row">
   <div class="eh-hero-text">
-    <div class="eh-eyebrow">event-driven analytics</div>
-    <h1 class="eh-headline">Your warehouse maps the known territory. <span class="eh-headline-accent">Now, let&rsquo;s expand what you can see.</span></h1>
     <div class="eh-nameline">Dan Manastireanu &middot; analytics engineering &middot; R / BI</div>
+    <p class="eh-hero-line">Written analysis paired with live dashboards &mdash; read the story, then challenge it with your own parameters.</p>
     <div class="eh-cta-row">
       <a class="eh-btn" href="blog.html">
         <span class="eh-btn-label">read()</span>
@@ -262,6 +265,7 @@ listing:
 
   <text class="eh-mono eh-t-faint" x="320" y="272" text-anchor="middle" font-size="10">one captured &#183; the rest light up where nobody is watching</text>
 </svg>
+  </div>
   </div>
 </section>
 ```
