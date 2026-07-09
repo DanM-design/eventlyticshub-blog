@@ -5,6 +5,9 @@
     ],
     "explore.qmd": [
       "explore"
+    ],
+    "index.qmd": [
+      "posts"
     ]
   }
 }

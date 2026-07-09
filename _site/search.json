@@ -1,5 +1,81 @@
 [
   {
+    "objectID": "work-with-me.html",
+    "href": "work-with-me.html",
+    "title": "Work with me",
+    "section": "",
+    "text": "I help teams see the events their reporting was never designed to catch — and turn them into known, governed metrics. Your data warehouse works, and it should stay; what I add is the layer it structurally lacks: capturing, classifying and analyzing what happens outside the predefined event vocabulary, so opportunities and threats are named before they become surprises."
+  },
+  {
+    "objectID": "work-with-me.html#where-i-can-help",
+    "href": "work-with-me.html#where-i-can-help",
+    "title": "Work with me",
+    "section": "Where I can help",
+    "text": "Where I can help\nTypical engagements: reviewing an event model or analytics architecture that has stopped answering new questions; designing event capture beyond the fixed DW schema; building the analysis and the interactive Shiny dashboards that let your own team interrogate the findings; and pairing written analysis with explorable data so decisions are made on evidence people can challenge, not just read."
+  },
+  {
+    "objectID": "work-with-me.html#how-it-starts",
+    "href": "work-with-me.html#how-it-starts",
+    "title": "Work with me",
+    "section": "How it starts",
+    "text": "How it starts\nA short conversation about what your current reporting can’t tell you. Write to me at danmana21@gmail.com or connect on LinkedIn — include a sentence about your stack and the question you can’t currently answer."
+  },
+  {
+    "objectID": "guide/getting-started/what-are-events.html",
+    "href": "guide/getting-started/what-are-events.html",
+    "title": "What Are Events?",
+    "section": "",
+    "text": "An event is a record of something that happened at a specific point in time. Every click, transaction, sensor reading, or status change can be captured as an event.",
+    "crumbs": [
+      "work with me →",
+      "Getting started",
+      "What are events?"
+    ]
+  },
+  {
+    "objectID": "guide/getting-started/what-are-events.html#defining-events-in-analytics",
+    "href": "guide/getting-started/what-are-events.html#defining-events-in-analytics",
+    "title": "What Are Events?",
+    "section": "",
+    "text": "An event is a record of something that happened at a specific point in time. Every click, transaction, sensor reading, or status change can be captured as an event.",
+    "crumbs": [
+      "work with me →",
+      "Getting started",
+      "What are events?"
+    ]
+  },
+  {
+    "objectID": "guide/getting-started/what-are-events.html#anatomy-of-an-event",
+    "href": "guide/getting-started/what-are-events.html#anatomy-of-an-event",
+    "title": "What Are Events?",
+    "section": "Anatomy of an Event",
+    "text": "Anatomy of an Event\nAt minimum, an event has:\n\nTimestamp — when it happened\nType — what kind of event it is (e.g., page_view, purchase, alert)\nPayload — the data associated with the event\n\n\n\nCode\nevent &lt;- list(\n  timestamp = Sys.time(),\n  type = \"page_view\",\n  payload = list(\n    user_id = \"u_12345\",\n    page = \"/dashboard\",\n    duration_seconds = 45\n  )\n)\n\nstr(event)\n\n\nList of 3\n $ timestamp: POSIXct[1:1], format: \"2026-05-02 00:37:18\"\n $ type     : chr \"page_view\"\n $ payload  :List of 3\n  ..$ user_id         : chr \"u_12345\"\n  ..$ page            : chr \"/dashboard\"\n  ..$ duration_seconds: num 45",
+    "crumbs": [
+      "work with me →",
+      "Getting started",
+      "What are events?"
+    ]
+  },
+  {
+    "objectID": "guide/getting-started/what-are-events.html#why-events-matter",
+    "href": "guide/getting-started/what-are-events.html#why-events-matter",
+    "title": "What Are Events?",
+    "section": "Why Events Matter",
+    "text": "Why Events Matter\nTraditional analytics asks “what is the current state?” Event analytics asks “what happened, in what order, and why?” This shift unlocks temporal analysis, funnel tracking, and real-time monitoring.\nExplore event data in the Dashboard →",
+    "crumbs": [
+      "work with me →",
+      "Getting started",
+      "What are events?"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Your warehouse maps the known territory. Now, let’s expand what you can see.",
+    "section": "",
+    "text": "event-driven analytics\n  Your warehouse maps the known territory. Now, let’s expand what you can see.\n  Dan Manastireanu · analytics engineering · R / BI\n  \n\n  Unknown events becoming known\n  Event dots drift through a chaotic unmapped field. One crosses into a small two-column warehouse table and its row is written in, while at the same moment other events flare up and fade, unseen, in the open field.\n  \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n  \n  \n  \n  \n  known territory / your DW\n  \n  \n  event\n  count\n  page_view\n  18,204\n  purchase\n  1,042\n  signup\n  3,311\n  \n\n  \n    checkout_retry\n      \n    \n    +1\n      \n    \n    \n      \n      \n        \n      \n    \n    \n      \n      \n        \n      \n    \n    \n      \n      \n    \n    \n      \n      \n    \n    \n      \n      \n    \n    \n      \n      \n    \n    \n      \n      \n    \n    \n      \n      \n    \n    \n      \n      \n    \n    \n      \n    \n    \n      \n      \n    \n    \n      \n    \n    \n      \n      \n    \n    \n      \n    \n    \n      \n      \n    \n  \n\n  \n    \n    checkout_retry\n    +1\n    \n    \n  \n\n  one captured · the rest light up where nobody is watching\n\n  \n  \n    \n      read()\n      the analyses, with R code\n    \n    \n      explore()\n      the story in the data\n    \n  \n\n\n\nlatest analyses\n\n\n\n\n\n\nWelcome to Event Analytics Hub\n\n\n\n\n\n\nnews\n\n\nevents\n\n\n\nIntroducing the platform — where written analysis meets interactive exploration.\n\n\n\n\n\nMay 1, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\n  \n  \n    I help teams see the events their reporting was never designed to catch — and turn them into known, governed metrics.\n    Work with me"
+  },
+  {
     "objectID": "posts/2026-05-01-welcome/index.html",
     "href": "posts/2026-05-01-welcome/index.html",
     "title": "Welcome to Event Analytics Hub",
@@ -28,101 +104,25 @@
     "text": "What’s Next\nUpcoming posts will cover event models, stream processing patterns, and dashboard design with R Shiny and bslib."
   },
   {
-    "objectID": "guide/getting-started/why-event-driven.html",
-    "href": "guide/getting-started/why-event-driven.html",
-    "title": "Why event-driven analytics?",
-    "section": "",
-    "text": "Traditional analytics relies on periodic snapshots — daily reports, weekly aggregations, monthly summaries. This approach loses the sequence of events and makes it impossible to answer questions like “what happened between Tuesday and Thursday that caused the spike?”",
-    "crumbs": [
-      "Getting started",
-      "Why event-driven?"
-    ]
-  },
-  {
-    "objectID": "guide/getting-started/why-event-driven.html#the-limits-of-snapshot-based-analytics",
-    "href": "guide/getting-started/why-event-driven.html#the-limits-of-snapshot-based-analytics",
-    "title": "Why event-driven analytics?",
-    "section": "",
-    "text": "Traditional analytics relies on periodic snapshots — daily reports, weekly aggregations, monthly summaries. This approach loses the sequence of events and makes it impossible to answer questions like “what happened between Tuesday and Thursday that caused the spike?”",
-    "crumbs": [
-      "Getting started",
-      "Why event-driven?"
-    ]
-  },
-  {
-    "objectID": "guide/getting-started/why-event-driven.html#event-driven-advantages",
-    "href": "guide/getting-started/why-event-driven.html#event-driven-advantages",
-    "title": "Why event-driven analytics?",
-    "section": "Event-driven advantages",
-    "text": "Event-driven advantages\nEvent-driven analytics preserves the full timeline. With event data you can:\n\nTrack user journeys step by step through a funnel\nDetect anomalies in real time as they happen\nReplay history to understand what led to an outcome\nBuild flexible aggregations at any time granularity",
-    "crumbs": [
-      "Getting started",
-      "Why event-driven?"
-    ]
-  },
-  {
-    "objectID": "guide/getting-started/why-event-driven.html#when-to-use-event-driven-analytics",
-    "href": "guide/getting-started/why-event-driven.html#when-to-use-event-driven-analytics",
-    "title": "Why event-driven analytics?",
-    "section": "When to use event-driven analytics",
-    "text": "When to use event-driven analytics\nEvent-driven approaches work best when timing and sequence matter — user behavior analysis, operational monitoring, IoT sensor data, and financial transaction tracking.\nFor static, slowly-changing data (annual reports, census data), traditional snapshot approaches are simpler and sufficient.",
-    "crumbs": [
-      "Getting started",
-      "Why event-driven?"
-    ]
-  },
-  {
-    "objectID": "guide/dashboards/dashboard-design.html",
-    "href": "guide/dashboards/dashboard-design.html",
-    "title": "Event dashboard design",
-    "section": "",
-    "text": "Event dashboards differ from traditional BI dashboards. They need to handle temporal data, streaming updates, and user-driven exploration.",
-    "crumbs": [
-      "Dashboards",
-      "Dashboard design"
-    ]
-  },
-  {
-    "objectID": "guide/dashboards/dashboard-design.html#designing-dashboards-for-event-data",
-    "href": "guide/dashboards/dashboard-design.html#designing-dashboards-for-event-data",
-    "title": "Event dashboard design",
-    "section": "",
-    "text": "Event dashboards differ from traditional BI dashboards. They need to handle temporal data, streaming updates, and user-driven exploration.",
-    "crumbs": [
-      "Dashboards",
-      "Dashboard design"
-    ]
-  },
-  {
-    "objectID": "guide/dashboards/dashboard-design.html#key-principles",
-    "href": "guide/dashboards/dashboard-design.html#key-principles",
-    "title": "Event dashboard design",
-    "section": "Key principles",
-    "text": "Key principles\nStart with a question, not a chart. Every dashboard panel should answer a specific question: “How many events occurred this quarter?” or “Which event types are trending?”\nTime is the primary axis. Event data is inherently temporal. The x-axis should almost always be time, with the ability to zoom in and out.\nFilters drive exploration. Users need to slice data by event type, source, time period, and custom attributes. Shiny’s reactive model is ideal for this.",
-    "crumbs": [
-      "Dashboards",
-      "Dashboard design"
-    ]
-  },
-  {
-    "objectID": "guide/dashboards/dashboard-design.html#the-eventlyticshub-dashboard",
-    "href": "guide/dashboards/dashboard-design.html#the-eventlyticshub-dashboard",
-    "title": "Event dashboard design",
-    "section": "The EventlyticsHub dashboard",
-    "text": "The EventlyticsHub dashboard\nThe interactive dashboard linked from this blog uses R Shiny with bslib for theming. It demonstrates:\n\nPeriod-based filtering via URL parameters (deep links from blog posts)\nReactive visualizations that update as filters change\nConsistent visual theming with the blog\n\nOpen the dashboard →",
-    "crumbs": [
-      "Dashboards",
-      "Dashboard design"
-    ]
-  },
-  {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Event Analytics Hub",
     "section": "",
-    "text": "Welcome to Event Analytics Hub\n\n\n\nnews\n\nevents\n\n\n\nIntroducing the platform — where written analysis meets interactive exploration.\n\n\n\n\n\nMay 1, 2026\n\n\n\n\n\nNo matching items",
+    "text": "Welcome to Event Analytics Hub\n\n\n\n\n\n\nnews\n\n\nevents\n\n\n\nIntroducing the platform — where written analysis meets interactive exploration.\n\n\n\n\n\nMay 1, 2026\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
+      "work with me →",
       "Read the analysis"
+    ]
+  },
+  {
+    "objectID": "explore.html",
+    "href": "explore.html",
+    "title": "Explore the data",
+    "section": "",
+    "text": "Interactive Shiny dashboards where you can filter, visualize, and analyze event data yourself. Each app links back to related blog posts for context and methodology.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvent Explorer\n\n\n\ninteractive\n\n\nevents\n\n\n\nFilter and visualize event data by type, source, and time period.\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "work with me →",
+      "Explore the data"
     ]
   },
   {
@@ -132,6 +132,7 @@
     "section": "",
     "text": "Event Analytics Hub is a platform for exploring event-driven analytics — from core concepts to interactive dashboards.\nEvery blog post links to an interactive Shiny application where you can test the concepts with real data. The gap between reading about analytics and doing analytics shouldn’t exist.",
     "crumbs": [
+      "work with me →",
       "About Me"
     ]
   },
@@ -142,6 +143,7 @@
     "section": "",
     "text": "Event Analytics Hub is a platform for exploring event-driven analytics — from core concepts to interactive dashboards.\nEvery blog post links to an interactive Shiny application where you can test the concepts with real data. The gap between reading about analytics and doing analytics shouldn’t exist.",
     "crumbs": [
+      "work with me →",
       "About Me"
     ]
   },
@@ -152,6 +154,7 @@
     "section": "Dan Manastireanu",
     "text": "Dan Manastireanu\nData analytics professional focused on event-driven architectures, R, and the modern data stack. Building tools that make data exploration accessible and reproducible.\nLinkedIn | Email | GitHub",
     "crumbs": [
+      "work with me →",
       "About Me"
     ]
   },
@@ -162,6 +165,7 @@
     "section": "Built with",
     "text": "Built with\nThis platform is built with R, Shiny, Quarto, and Docker — deployed on a self-hosted server with Docker Swarm and Traefik. The blog renders to static HTML. The Shiny apps run in Docker containers. Both are open source.",
     "crumbs": [
+      "work with me →",
       "About Me"
     ]
   },
@@ -194,64 +198,99 @@
     "text": "Related posts\n\nWelcome to Event Analytics Hub\n\n\nOpen Event Explorer →"
   },
   {
-    "objectID": "explore.html",
-    "href": "explore.html",
-    "title": "Explore the data",
+    "objectID": "guide/dashboards/dashboard-design.html",
+    "href": "guide/dashboards/dashboard-design.html",
+    "title": "Event dashboard design",
     "section": "",
-    "text": "Interactive Shiny dashboards where you can filter, visualize, and analyze event data yourself. Each app links back to related blog posts for context and methodology.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvent Explorer\n\n\n\ninteractive\n\nevents\n\n\n\nFilter and visualize event data by type, source, and time period.\n\n\n\n\n\nNo matching items",
+    "text": "Event dashboards differ from traditional BI dashboards. They need to handle temporal data, streaming updates, and user-driven exploration.",
     "crumbs": [
-      "Explore the data"
+      "work with me →",
+      "Dashboards",
+      "Dashboard design"
     ]
   },
   {
-    "objectID": "guide/getting-started/what-are-events.html",
-    "href": "guide/getting-started/what-are-events.html",
-    "title": "What Are Events?",
+    "objectID": "guide/dashboards/dashboard-design.html#designing-dashboards-for-event-data",
+    "href": "guide/dashboards/dashboard-design.html#designing-dashboards-for-event-data",
+    "title": "Event dashboard design",
     "section": "",
-    "text": "An event is a record of something that happened at a specific point in time. Every click, transaction, sensor reading, or status change can be captured as an event.",
+    "text": "Event dashboards differ from traditional BI dashboards. They need to handle temporal data, streaming updates, and user-driven exploration.",
     "crumbs": [
-      "Getting started",
-      "What are events?"
+      "work with me →",
+      "Dashboards",
+      "Dashboard design"
     ]
   },
   {
-    "objectID": "guide/getting-started/what-are-events.html#defining-events-in-analytics",
-    "href": "guide/getting-started/what-are-events.html#defining-events-in-analytics",
-    "title": "What Are Events?",
+    "objectID": "guide/dashboards/dashboard-design.html#key-principles",
+    "href": "guide/dashboards/dashboard-design.html#key-principles",
+    "title": "Event dashboard design",
+    "section": "Key principles",
+    "text": "Key principles\nStart with a question, not a chart. Every dashboard panel should answer a specific question: “How many events occurred this quarter?” or “Which event types are trending?”\nTime is the primary axis. Event data is inherently temporal. The x-axis should almost always be time, with the ability to zoom in and out.\nFilters drive exploration. Users need to slice data by event type, source, time period, and custom attributes. Shiny’s reactive model is ideal for this.",
+    "crumbs": [
+      "work with me →",
+      "Dashboards",
+      "Dashboard design"
+    ]
+  },
+  {
+    "objectID": "guide/dashboards/dashboard-design.html#the-eventlyticshub-dashboard",
+    "href": "guide/dashboards/dashboard-design.html#the-eventlyticshub-dashboard",
+    "title": "Event dashboard design",
+    "section": "The EventlyticsHub dashboard",
+    "text": "The EventlyticsHub dashboard\nThe interactive dashboard linked from this blog uses R Shiny with bslib for theming. It demonstrates:\n\nPeriod-based filtering via URL parameters (deep links from blog posts)\nReactive visualizations that update as filters change\nConsistent visual theming with the blog\n\nOpen the dashboard →",
+    "crumbs": [
+      "work with me →",
+      "Dashboards",
+      "Dashboard design"
+    ]
+  },
+  {
+    "objectID": "guide/getting-started/why-event-driven.html",
+    "href": "guide/getting-started/why-event-driven.html",
+    "title": "Why event-driven analytics?",
     "section": "",
-    "text": "An event is a record of something that happened at a specific point in time. Every click, transaction, sensor reading, or status change can be captured as an event.",
+    "text": "Traditional analytics relies on periodic snapshots — daily reports, weekly aggregations, monthly summaries. This approach loses the sequence of events and makes it impossible to answer questions like “what happened between Tuesday and Thursday that caused the spike?”",
     "crumbs": [
+      "work with me →",
       "Getting started",
-      "What are events?"
+      "Why event-driven?"
     ]
   },
   {
-    "objectID": "guide/getting-started/what-are-events.html#anatomy-of-an-event",
-    "href": "guide/getting-started/what-are-events.html#anatomy-of-an-event",
-    "title": "What Are Events?",
-    "section": "Anatomy of an Event",
-    "text": "Anatomy of an Event\nAt minimum, an event has:\n\nTimestamp — when it happened\nType — what kind of event it is (e.g., page_view, purchase, alert)\nPayload — the data associated with the event\n\n\n\nCode\nevent &lt;- list(\n  timestamp = Sys.time(),\n  type = \"page_view\",\n  payload = list(\n    user_id = \"u_12345\",\n    page = \"/dashboard\",\n    duration_seconds = 45\n  )\n)\n\nstr(event)\n\n\nList of 3\n $ timestamp: POSIXct[1:1], format: \"2026-05-02 00:37:18\"\n $ type     : chr \"page_view\"\n $ payload  :List of 3\n  ..$ user_id         : chr \"u_12345\"\n  ..$ page            : chr \"/dashboard\"\n  ..$ duration_seconds: num 45",
-    "crumbs": [
-      "Getting started",
-      "What are events?"
-    ]
-  },
-  {
-    "objectID": "guide/getting-started/what-are-events.html#why-events-matter",
-    "href": "guide/getting-started/what-are-events.html#why-events-matter",
-    "title": "What Are Events?",
-    "section": "Why Events Matter",
-    "text": "Why Events Matter\nTraditional analytics asks “what is the current state?” Event analytics asks “what happened, in what order, and why?” This shift unlocks temporal analysis, funnel tracking, and real-time monitoring.\nExplore event data in the Dashboard →",
-    "crumbs": [
-      "Getting started",
-      "What are events?"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Event Analytics Hub",
+    "objectID": "guide/getting-started/why-event-driven.html#the-limits-of-snapshot-based-analytics",
+    "href": "guide/getting-started/why-event-driven.html#the-limits-of-snapshot-based-analytics",
+    "title": "Why event-driven analytics?",
     "section": "",
-    "text": "Event-driven analytics\n  Understand your data through events, patterns, and time.\n  A platform that pairs written analysis with interactive exploration. Blog posts tell the story. Shiny apps let you dig into the data yourself.\n  \n    \n      Read →\n      Articles, insights, and R code\n    \n    \n      Explore →\n      Interactive Shiny dashboards\n    \n  \n\n\n\n  \n    \n      Getting started\n      2 articles\n    \n    \n      Core concepts\n      3 articles\n    \n    \n      Architecture\n      3 articles\n    \n    \n      Dashboards\n      2 articles\n    \n  \n  \n    \n      Why this exists\n      Most analytics blogs show static charts and tell you to trust the conclusion. Here, every analysis links to a live dashboard where you can change the parameters, challenge the assumptions, and see what happens. The gap between reading about data and working with data shouldn't exist.\n    \n    \n      What you'll find\n      Event modeling patterns that work in production. Stream processing versus snapshot trade-offs with real benchmarks. Dashboard design principles that respect your time. R and Shiny techniques you can apply to your own data tomorrow."
+    "text": "Traditional analytics relies on periodic snapshots — daily reports, weekly aggregations, monthly summaries. This approach loses the sequence of events and makes it impossible to answer questions like “what happened between Tuesday and Thursday that caused the spike?”",
+    "crumbs": [
+      "work with me →",
+      "Getting started",
+      "Why event-driven?"
+    ]
+  },
+  {
+    "objectID": "guide/getting-started/why-event-driven.html#event-driven-advantages",
+    "href": "guide/getting-started/why-event-driven.html#event-driven-advantages",
+    "title": "Why event-driven analytics?",
+    "section": "Event-driven advantages",
+    "text": "Event-driven advantages\nEvent-driven analytics preserves the full timeline. With event data you can:\n\nTrack user journeys step by step through a funnel\nDetect anomalies in real time as they happen\nReplay history to understand what led to an outcome\nBuild flexible aggregations at any time granularity",
+    "crumbs": [
+      "work with me →",
+      "Getting started",
+      "Why event-driven?"
+    ]
+  },
+  {
+    "objectID": "guide/getting-started/why-event-driven.html#when-to-use-event-driven-analytics",
+    "href": "guide/getting-started/why-event-driven.html#when-to-use-event-driven-analytics",
+    "title": "Why event-driven analytics?",
+    "section": "When to use event-driven analytics",
+    "text": "When to use event-driven analytics\nEvent-driven approaches work best when timing and sequence matter — user behavior analysis, operational monitoring, IoT sensor data, and financial transaction tracking.\nFor static, slowly-changing data (annual reports, census data), traditional snapshot approaches are simpler and sufficient.",
+    "crumbs": [
+      "work with me →",
+      "Getting started",
+      "Why event-driven?"
+    ]
   }
 ]

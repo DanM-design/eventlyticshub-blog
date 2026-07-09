@@ -1,0 +1,15 @@
+---
+title: "Work with me"
+sidebar: false
+toc: false
+---
+
+I help teams see the events their reporting was never designed to catch --- and turn them into known, governed metrics. Your data warehouse works, and it should stay; what I add is the layer it structurally lacks: capturing, classifying and analyzing what happens *outside* the predefined event vocabulary, so opportunities and threats are named before they become surprises.
+
+## Where I can help
+
+Typical engagements: reviewing an event model or analytics architecture that has stopped answering new questions; designing event capture beyond the fixed DW schema; building the analysis and the interactive Shiny dashboards that let your own team interrogate the findings; and pairing written analysis with explorable data so decisions are made on evidence people can challenge, not just read.
+
+## How it starts
+
+A short conversation about what your current reporting can't tell you. Write to me at <a href="mailto:danmana21@gmail.com">danmana21@gmail.com</a> or connect on [LinkedIn](https://www.linkedin.com/in/damanastireanu) --- include a sentence about your stack and the question you can't currently answer.

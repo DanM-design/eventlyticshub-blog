@@ -48,8 +48,18 @@ body {
   letter-spacing: -0.3px;
 }
 
+// Navbar links: quiet mono wayfinding (e.g. "work with me")
 #navbarCollapse {
-  display: none !important;
+  justify-content: flex-end;
+
+  .navbar-nav .nav-link {
+    font-family: $font-family-monospace;
+    font-size: 0.8rem;
+    color: $eh-muted;
+    letter-spacing: 0.3px;
+
+    &:hover { color: $eh-strong; }
+  }
 }
 
 .quarto-navbar-tools .quarto-navigation-tool {
@@ -211,13 +221,13 @@ nav.quarto-page-breadcrumbs,
 // Blog listing — single column
 // ============================================
 
-.quarto-listing-default .metadata,
 .quarto-listing-default .listing-author {
   display: none !important;
 }
 
+.quarto-listing-default .quarto-post,
+.quarto-listing-default .quarto-post,
 .quarto-listing-default .listing-item {
-  display: block !important;
   background-color: $card-bg;
   border: 0.5px solid $card-border-color;
   border-radius: $border-radius;
@@ -266,6 +276,26 @@ nav.quarto-page-breadcrumbs,
   line-height: 1.6;
   margin-top: 0.5rem;
   clear: both;
+}
+
+.quarto-listing-default .quarto-post {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  border-bottom: none;
+
+  .body { flex: 1; }
+
+  .metadata {
+    font-family: $font-family-monospace;
+    font-size: 0.8rem;
+    color: $eh-faint;
+    flex-basis: auto;
+  }
+
+  .listing-title a { color: $eh-heading; text-decoration: none; }
+  .listing-title a:hover { color: $eh-accent; }
+  .listing-subtitle:empty { display: none; }
 }
 
 .quarto-listing-category {
@@ -559,4 +589,201 @@ code {
   #quarto-sidebar-glass {
     z-index: 1039;
   }
+}
+
+
+// =====================================================
+// DESIGN SYSTEM — homepage components
+// Rules: one solid amber element per viewport (budget);
+// surfaces L0 page / L1 quiet / L2 card / L3 lit;
+// type: human wrote it -> Sans, system produced it -> Mono.
+// =====================================================
+
+.eh-hero {
+  max-width: min(1200px, 94vw);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem) 3rem;
+  text-align: center;
+}
+
+.eh-eyebrow {
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $eh-accent;
+  margin-bottom: 1rem;
+}
+
+h1.eh-headline {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 500;
+  color: $eh-heading;
+  line-height: 1.28;
+  letter-spacing: -0.5px;
+  max-width: 720px;
+  margin: 0 auto 0.75rem;
+  border: none;
+  padding: 0;
+  text-wrap: balance;
+}
+
+.eh-headline-accent { color: $eh-accent; }
+
+.eh-nameline {
+  font-family: $font-family-monospace;
+  font-size: 0.8rem;
+  color: $eh-muted;
+  margin-bottom: 2rem;
+}
+
+.eh-hero-visual {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.eh-hero-svg { width: 100%; height: auto; display: block; }
+
+// SVG palette via tokens
+.eh-hero-svg {
+  .eh-mono { font-family: $font-family-monospace; }
+  .eh-chaos { stroke: $eh-chaos; fill: none; }
+  .eh-chaos-hi { stroke: $eh-chaos-hi; fill: none; }
+  .eh-chaos-dot { fill: $eh-chaos-dot; }
+  .eh-mover { fill: $eh-chaos-dot; }
+  .eh-fill-accent { fill: $eh-accent; }
+  .eh-ring { stroke: $eh-accent-dim; }
+  .eh-entry { stroke: rgba($eh-accent, 0.3); }
+  .eh-dw { fill: $eh-surface-lit; stroke: $eh-border-hover; stroke-width: 1; }
+  .eh-dw-line { stroke: $eh-border-subtle; stroke-width: 1; }
+  .eh-dw-title { fill: $eh-accent-dim; }
+  .eh-slot { stroke: $eh-border-hover; }
+  .eh-t-text { fill: $eh-text; }
+  .eh-t-muted { fill: $eh-muted; }
+  .eh-t-faint { fill: $eh-faint; }
+  .eh-t-accent { fill: $eh-accent; }
+  .eh-t-accent-dim { fill: $eh-accent-dim; }
+  .eh-static { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eh-hero-svg .eh-anim { display: none; }
+  .eh-hero-svg .eh-static { display: block; }
+}
+
+// CTA row — offer only; the ask lives at the bottom of the page
+.eh-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.eh-btn {
+  display: block;
+  background-color: $card-bg;
+  border: 1px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 0.8rem 1.6rem;
+  min-width: 200px;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+
+  &:hover { border-color: $eh-border-hover; text-decoration: none; }
+}
+
+.eh-btn-label {
+  display: block;
+  font-family: $font-family-monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $eh-heading;
+}
+
+.eh-btn-sub {
+  display: block;
+  font-size: 0.8rem;
+  color: $eh-muted;
+  margin-top: 0.15rem;
+}
+
+.eh-btn-solid {
+  display: inline-block;
+  background-color: $eh-accent;
+  color: $eh-accent-contrast;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.7rem 1.4rem;
+  border-radius: $border-radius;
+  text-decoration: none;
+
+  &:hover { background-color: $eh-accent-hover; color: $eh-accent-contrast; text-decoration: none; }
+}
+
+// Sections
+.eh-section {
+  max-width: min(1000px, 92vw);
+  margin: 0 auto;
+  padding: 3.5rem clamp(1.25rem, 3vw, 2.5rem);
+  border-top: 0.5px solid $eh-border-hairline;
+}
+
+.eh-section-label {
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $eh-muted;
+  margin-bottom: 1.25rem;
+}
+
+// Listing: first item is the featured one (L3), rest stay quiet (L2)
+.eh-section .quarto-listing-default {
+  .listing-date, .listing-category { font-family: $font-family-monospace; }
+
+  .quarto-post:first-child,
+  .listing-item:first-child {
+    background-color: $eh-surface-lit;
+    border: 1px solid $eh-border-hover;
+    padding: 1.5rem 1.75rem;
+
+    .listing-title { font-size: 1.35rem; }
+  }
+
+  .quarto-post:not(:first-child) .listing-description,
+  .listing-item:not(:first-child) .listing-description { display: none; }
+}
+
+// About band — where the ask has been earned
+.eh-about {
+  max-width: min(1000px, 92vw);
+  margin: 0 auto;
+  padding: 3rem clamp(1.25rem, 3vw, 2.5rem) 4rem;
+  border-top: 0.5px solid $eh-border-hairline;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 600px) { flex-direction: column; text-align: center; }
+}
+
+.eh-about-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.5px solid $eh-border;
+  flex-shrink: 0;
+}
+
+.eh-about-body { max-width: 460px; }
+
+.eh-about-text {
+  font-size: 1rem;
+  color: $eh-text;
+  line-height: 1.65;
+  margin-bottom: 0.9rem;
 }

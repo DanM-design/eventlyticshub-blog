@@ -9,14 +9,13 @@
 <link>https://www.eventlyticshub.com/blog.html</link>
 <atom:link href="https://www.eventlyticshub.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.9.37</generator>
-<lastBuildDate>Fri, 01 May 2026 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Fri, 01 May 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Welcome to Event Analytics Hub</title>
   <dc:creator>Dan Manastireanu</dc:creator>
   <link>https://www.eventlyticshub.com/posts/2026-05-01-welcome/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -31,7 +30,7 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(ggplot2)</span>
 <span id="cb1-2"></span>
@@ -114,7 +113,7 @@ font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"none"</span>)</span></code></pre></div></div>
+font-style: inherit;">"none"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -138,7 +137,7 @@ font-style: inherit;">"none"</span>)</span></code></pre></div></div>
   <category>news</category>
   <category>events</category>
   <guid>https://www.eventlyticshub.com/posts/2026-05-01-welcome/</guid>
-  <pubDate>Fri, 01 May 2026 04:00:00 GMT</pubDate>
+  <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/2026-05-01-welcome/index.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/2026-05-01-welcome/index.html"

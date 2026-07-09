@@ -20,6 +20,9 @@ website:
 
   navbar:
     pinned: true
+    right:
+      - text: "work with me \u2192"
+        href: work-with-me.qmd
 
   sidebar:
     title: ""

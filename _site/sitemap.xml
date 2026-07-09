@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.eventlyticshub.com/posts/2026-05-01-welcome/index.html</loc>
-    <lastmod>2026-05-02T00:31:15.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.eventlyticshub.com/guide/getting-started/why-event-driven.html</loc>
-    <lastmod>2026-05-02T00:31:51.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.eventlyticshub.com/guide/dashboards/dashboard-design.html</loc>
-    <lastmod>2026-05-02T00:32:02.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.eventlyticshub.com/blog.html</loc>
-    <lastmod>2026-05-04T13:31:47.225Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.eventlyticshub.com/about.html</loc>
-    <lastmod>2026-05-02T00:30:55.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.eventlyticshub.com/explore/event-explorer/index.html</loc>
-    <lastmod>2026-05-02T00:31:25.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.eventlyticshub.com/explore.html</loc>
-    <lastmod>2026-05-02T00:30:45.000Z</lastmod>
+    <loc>https://www.eventlyticshub.com/work-with-me.html</loc>
+    <lastmod>2026-07-09T01:57:53.200Z</lastmod>
   </url>
   <url>
     <loc>https://www.eventlyticshub.com/guide/getting-started/what-are-events.html</loc>
-    <lastmod>2026-05-02T00:31:41.000Z</lastmod>
+    <lastmod>2026-07-08T03:33:59.636Z</lastmod>
   </url>
   <url>
     <loc>https://www.eventlyticshub.com/index.html</loc>
-    <lastmod>2026-05-02T13:57:34.230Z</lastmod>
+    <lastmod>2026-07-09T01:57:05.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.eventlyticshub.com/posts/2026-05-01-welcome/index.html</loc>
+    <lastmod>2026-07-08T03:33:59.636Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.eventlyticshub.com/blog.html</loc>
+    <lastmod>2026-07-08T03:33:59.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.eventlyticshub.com/explore.html</loc>
+    <lastmod>2026-07-08T03:33:59.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.eventlyticshub.com/about.html</loc>
+    <lastmod>2026-07-08T03:33:59.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.eventlyticshub.com/explore/event-explorer/index.html</loc>
+    <lastmod>2026-07-08T03:33:59.635Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.eventlyticshub.com/guide/dashboards/dashboard-design.html</loc>
+    <lastmod>2026-07-08T03:33:59.636Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.eventlyticshub.com/guide/getting-started/why-event-driven.html</loc>
+    <lastmod>2026-07-08T03:33:59.636Z</lastmod>
   </url>
 </urlset>
