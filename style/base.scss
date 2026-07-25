@@ -1018,3 +1018,147 @@ h1.eh-page-title {
   &:hover { color: $eh-accent; }
   &.active { color: $eh-accent; }
 }
+
+// FAQ — native accordion, machine label, human questions
+.eh-faq {
+  details {
+    border-bottom: 0.5px solid $eh-border-subtle;
+
+    &:first-of-type { border-top: 0.5px solid $eh-border-subtle; }
+  }
+
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    cursor: pointer;
+    padding: 0.9rem 0.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $eh-strong;
+    transition: color 0.15s ease;
+
+    &::-webkit-details-marker { display: none; }
+
+    &::after {
+      content: "+";
+      font-family: $font-family-monospace;
+      font-size: 1.15rem;
+      color: $eh-muted;
+      flex-shrink: 0;
+      transition: color 0.15s ease;
+    }
+
+    &:hover { color: $eh-heading; &::after { color: $eh-accent; } }
+  }
+
+  details[open] summary {
+    color: $eh-heading;
+
+    &::after { content: "\2212"; color: $eh-accent; }
+  }
+
+  details p {
+    font-size: 0.95rem;
+    color: $eh-text;
+    line-height: 1.65;
+    max-width: 760px;
+    padding: 0 0.25rem 1rem;
+    margin: 0;
+
+    a { color: $eh-accent; text-decoration: none; &:hover { color: $eh-accent-hover; } }
+  }
+}
+
+
+// Start-here question tiles (ten discovery cards)
+.eh-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.eh-tile {
+  display: flex;
+  flex-direction: column;
+  background-color: $card-bg;
+  border: 0.5px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 0.95rem 1.1rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $eh-border-hover;
+    text-decoration: none;
+    .eh-tile-link { color: $eh-accent; }
+  }
+}
+
+.eh-tile-kicker {
+  font-family: $font-family-monospace;
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $eh-faint;
+  margin-bottom: 0.35rem;
+}
+
+.eh-tile-title {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: $eh-heading;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.eh-tile-text {
+  font-size: 0.87rem;
+  color: $eh-text;
+  line-height: 1.55;
+  margin: 0.45rem 0 0.6rem;
+  flex: 1;
+}
+
+.eh-tile-link {
+  font-family: $font-family-monospace;
+  font-size: 0.82rem;
+  color: $eh-muted;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+
+// Paired CTA columns: descriptor rectangle above each door
+.eh-cta-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+  max-width: 560px;
+
+  @media (max-width: 900px) { margin-inline: auto; }
+  @media (max-width: 560px) { grid-template-columns: 1fr; }
+}
+
+.eh-cta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.eh-cta-note {
+  flex: 1;
+  background-color: $eh-surface-quiet;
+  border: 0.5px solid $eh-border-subtle;
+  border-radius: $border-radius;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.85rem;
+  color: $eh-text;
+  line-height: 1.55;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.eh-cta-cols .eh-btn { min-width: 0; width: 100%; }

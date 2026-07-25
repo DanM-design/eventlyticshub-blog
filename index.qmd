@@ -19,16 +19,21 @@ listing:
   <div class="eh-hero-row">
   <div class="eh-hero-text">
     <div class="eh-nameline">Dan Manastireanu &middot; analytics engineering &middot; R / BI</div>
-    <p class="eh-hero-line">Written analysis paired with live dashboards &mdash; read the story, then challenge it with your own parameters.</p>
-    <div class="eh-cta-row">
-      <a class="eh-btn" href="blog.html">
-        <span class="eh-btn-label">read()</span>
-        <span class="eh-btn-sub">the analyses, with R code</span>
-      </a>
-      <a class="eh-btn" href="explore.html">
-        <span class="eh-btn-label">explore()</span>
-        <span class="eh-btn-sub">the story in the data</span>
-      </a>
+    <div class="eh-cta-cols">
+      <div class="eh-cta-col">
+        <p class="eh-cta-note">Written investigations of open questions &mdash; the reasoning, the data, and the R code, with limits stated honestly.</p>
+        <a class="eh-btn" href="blog.html">
+          <span class="eh-btn-label">read()</span>
+          <span class="eh-btn-sub">the analyses</span>
+        </a>
+      </div>
+      <div class="eh-cta-col">
+        <p class="eh-cta-note">The same analyses as live dashboards &mdash; change the parameters and see if the conclusions survive you.</p>
+        <a class="eh-btn" href="explore.html">
+          <span class="eh-btn-label">explore()</span>
+          <span class="eh-btn-sub">the story in the data</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="eh-hero-visual">
@@ -204,20 +209,88 @@ listing:
 ```{=html}
 <section class="eh-section">
   <div class="eh-section-label">start here</div>
-  <div class="eh-guides">
-    <a class="eh-guide-card" href="guide/getting-started/what-are-events.html">
-      <span class="eh-guide-cat">getting started</span>
-      <span class="eh-guide-title">What are events?</span>
+  <div class="eh-tiles">
+    <a class="eh-tile" href="guide/getting-started/what-are-events.html">
+      <span class="eh-tile-kicker">getting started</span>
+      <span class="eh-tile-title">What are events?</span>
+      <p class="eh-tile-text">Before the dashboards and the pipelines: the small happenings everything else is made of.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
     </a>
-    <a class="eh-guide-card" href="guide/getting-started/why-event-driven.html">
-      <span class="eh-guide-cat">getting started</span>
-      <span class="eh-guide-title">Why event-driven analytics?</span>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">the source</span>
+      <span class="eh-tile-title">Is data always one step behind?</span>
+      <p class="eh-tile-text">Every dataset is the footprint of something that already happened &mdash; an event. More footprints, collected faster, still tell you where things walked.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
     </a>
-    <a class="eh-guide-card" href="guide/dashboards/dashboard-design.html">
-      <span class="eh-guide-cat">dashboards</span>
-      <span class="eh-guide-title">Event dashboard design</span>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">the unseen</span>
+      <span class="eh-tile-title">What happens to the events nobody records?</span>
+      <p class="eh-tile-text">Around the recorded few, each day produces many more. They happen whether or not anything is counting.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
+    </a>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">complexity</span>
+      <span class="eh-tile-title">Were the last four years more complex than the five before?</span>
+      <p class="eh-tile-text">It feels that way. Feelings aside &mdash; several public measures let us actually check.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
+    </a>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">velocity</span>
+      <span class="eh-tile-title">Are events moving faster from first sign to impact?</span>
+      <p class="eh-tile-text">In at least one field, the gap between an event and its official record has turned negative.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
+    </a>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">cost</span>
+      <span class="eh-tile-title">What do the events nobody caught end up costing?</span>
+      <p class="eh-tile-text">Losses have been measured &mdash; and they grow with the time an event goes unnoticed.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
+    </a>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">hindsight</span>
+      <span class="eh-tile-title">Why do big changes look obvious only afterward?</span>
+      <p class="eh-tile-text">Every disruption produces the same sentence in the same meeting: why didn&rsquo;t we see this coming?</p>
+      <span class="eh-tile-link">read() &rarr;</span>
+    </a>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">context</span>
+      <span class="eh-tile-title">Why does the same action succeed one year and fail the next?</span>
+      <p class="eh-tile-text">The action was identical. The reports look identical. Something else changed.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
+    </a>
+    <a class="eh-tile" href="#">
+      <span class="eh-tile-kicker">instruments</span>
+      <span class="eh-tile-title">Can a report be accurate and still miss the story?</span>
+      <p class="eh-tile-text">Yes &mdash; and that combination is more dangerous than a wrong report. Two case studies.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
+    </a>
+    <a class="eh-tile" href="guide/getting-started/why-event-driven.html">
+      <span class="eh-tile-kicker">getting started</span>
+      <span class="eh-tile-title">Why event-driven analytics?</span>
+      <p class="eh-tile-text">If events come first and data second, analytics can be arranged accordingly. What that looks like.</p>
+      <span class="eh-tile-link">read() &rarr;</span>
     </a>
   </div>
+</section>
+
+<section class="eh-section eh-faq">
+  <div class="eh-section-label">faq</div>
+  <details>
+    <summary>Do I need to rebuild my analytics stack &mdash; warehouse, pipelines, dashboards?</summary>
+    <p>No. Your warehouse and dashboards do exactly what they were designed for, and they stay. This is a complementary layer: it watches for events outside the predefined vocabulary, and when one proves to matter, it graduates into your existing governed layer &mdash; a new row in the warehouse, not a new warehouse.</p>
+  </details>
+  <details>
+    <summary>Is this a new concept? Why now?</summary>
+    <p>The roots are respectable &mdash; software observability and event sourcing have argued for years that systems should capture more than anyone predefines. What is new is applying that discipline to business analytics and BI strategy. And &ldquo;why now&rdquo; is simple arithmetic: the pace at which the world generates new kinds of events has outrun the pace at which schemas get updated. The gap between those two speeds is where this layer works.</p>
+  </details>
+  <details>
+    <summary>What will this tell me that my current reports don&rsquo;t?</summary>
+    <p>Your reports answer questions about events someone already defined &mdash; and they should keep doing that. This layer surfaces a different class of information: events happening in and around the business that have no name yet, the early form of opportunities and threats. The deliverable is exactly that &mdash; unknown events captured, classified, and made known before they arrive as a surprise inside a KPI.</p>
+  </details>
+  <details>
+    <summary>How do we start?</summary>
+    <p>With a short conversation about what your current reporting can&rsquo;t tell you &mdash; then typically a small, scoped pilot: one data stream, a few weeks, ending with a set of newly named events and a live dashboard you can interrogate yourself. See <a href="work-with-me.html">work with me</a>.</p>
+  </details>
 </section>
 
 <section class="eh-follow">

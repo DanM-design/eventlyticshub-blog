@@ -2,3 +2,6 @@ _site/
 .quarto/
 blog_files/
 *.patch
+
+/.quarto/
+**/*.quarto_ipynb

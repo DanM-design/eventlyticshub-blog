@@ -1,0 +1,176 @@
+---
+title: "Whose event was the housing correction?"
+subtitle: "Same chart, four different events — and why more data would not have helped"
+date: 2026-07-20
+draft: true
+categories: [instruments, context, cost]
+format:
+  html:
+    code-fold: true
+    fig-width: 9
+    fig-height: 4.6
+---
+
+<!-- DRAFT. All chart data below is SYNTHETIC, shaped on real index behaviour, so this
+     document renders end-to-end today. Before publication: replace data/ chunks with the
+     cached CSVs from CREA MLS HPI, Teranet–National Bank HPI, and Bank of Canada Valet
+     (one data/ folder shared with the Shiny app), and clear the ⚠ verification blocks. -->
+
+```{r setup, include=FALSE}
+library(ggplot2); library(dplyr); library(scales)
+theme_set(theme_minimal(base_size = 12) +
+  theme(plot.caption = element_text(hjust = 0, size = 8, colour = "grey35"),
+        plot.subtitle = element_text(size = 10, colour = "grey25")))
+set.seed(42)
+# --- SYNTHETIC national index, monthly, 2005–2026 (labeled on every chart) ---
+m   <- seq(as.Date("2005-01-01"), as.Date("2026-06-01"), by = "month")
+idx <- c(seq(100, 168, length.out = 96),                 # 2005–2012
+         seq(168, 205, length.out = 60),                 # 2013–2017
+         seq(205, 232, length.out = 39),                 # 2018–2021Q1
+         seq(232, 296, length.out = 12),                 # pandemic run-up
+         seq(296, 244, length.out = 24),                 # correction
+         seq(244, 251, length.out = 27))[1:length(m)] + rnorm(length(m), 0, 1.4)
+hpi <- data.frame(m, idx)
+peak <- hpi$m[which.max(hpi$idx)]
+```
+
+You have seen this chart. Everyone has.
+
+```{r v1-headline}
+#| fig-cap: ""
+ggplot(hpi, aes(m, idx)) +
+  geom_line(colour = "#1f5c8a", linewidth = 1.1) +
+  geom_vline(xintercept = as.numeric(peak), linetype = "dashed", colour = "grey55") +
+  annotate("label", x = peak, y = 130, hjust = 0, size = 3, fill = "white",
+           label = "the peak — and the line every\nheadline was written about") +
+  labs(title = "V1 · The chart everyone saw",
+       subtitle = "THE LOGIC: this line is accurate. Nothing in this post disputes it. The question is what it is a footprint OF.",
+       x = NULL, y = "House price index (2005 = 100)",
+       caption = paste("HOW TO READ: national composite index; the decline from peak is the 'correction'.",
+       "CONTEXT: an aggregate describes the market — it does not say on whom the change landed.",
+       "DRAFT — SYNTHETIC series shaped on CREA/Teranet behaviour; production uses CREA MLS HPI + Teranet CSVs.", sep = "\n"))
+```
+
+The line fell, and a label arrived with it: *correction*. The label came with borrowed
+knowledge — markets resetting, housing getting affordable, a bubble deflating. That is
+the usual path: **data → borrowed label → assumed understanding.**
+
+This post walks the other path: **data → which event generated this, and on whose ledger
+does it act? → understanding.** The two paths end in different places.
+
+## What a house price is, on a family's balance sheet
+
+A purchase price is two things stacked: the family's down payment, and the bank's
+mortgage. In Canada, a conventional purchase means at least 20% down; below that,
+mortgage default insurance is legally required — and the **premium is paid by the
+borrower**. <!-- ⚠ verify current CMHC thresholds & premium schedule before publication -->
+
+So consider the simplest possible house: bought for 100, with 20 down and 80 borrowed.
+Now let the index fall about 20% — roughly what the aggregate line above did.
+
+```{r v2-ledgers}
+#| fig-height: 4
+led <- data.frame(when = factor(rep(c("At purchase", "After a 20% decline"), each = 2),
+                                levels = c("At purchase", "After a 20% decline")),
+                  part = factor(rep(c("Owner's equity", "Bank's mortgage"), 2),
+                                levels = c("Bank's mortgage", "Owner's equity")),
+                  val  = c(20, 80, 0, 80))
+ggplot(led, aes(when, val, fill = part)) +
+  geom_col(width = .55) +
+  scale_fill_manual(values = c("Owner's equity" = "#a4770e", "Bank's mortgage" = "#9B958D"), name = NULL) +
+  annotate("label", x = 2, y = 92, size = 3.2, fill = "white",
+           label = "price: −20%\nbank's ledger: 0%\nowner's ledger: −100%") +
+  labs(title = "V2 · One house, two ledgers",
+       subtitle = "THE LOGIC: the same event has a different magnitude on each ledger it touches. Leverage is the multiplier.",
+       x = NULL, y = "Value",
+       caption = paste("HOW TO READ: the grey block is untouched; the amber block is gone. A 20% market event",
+       "is a 100% household event at 20% down. CONTEXT: arithmetic — no dataset required, no dataset can soften it.", sep = "\n"))
+```
+
+Nothing controversial happened in that chart. It is the arithmetic every mortgage
+contract already contains. It is also absent from essentially every rendering of V1.
+
+## Whose event was it?
+
+Apply the real index path to real purchase years, each at 20% down, and the single
+"correction" separates into very different events:
+
+```{r v3-cohorts}
+cohorts <- data.frame(year = 2013:2025)
+cohorts$entry <- sapply(cohorts$year, function(y) mean(hpi$idx[format(hpi$m, "%Y") == as.character(y)]))
+now <- tail(hpi$idx, 1)
+cohorts$equity_change <- pmax(-100, ((now - cohorts$entry) / (cohorts$entry * 0.20)) * 100)
+ggplot(cohorts, aes(factor(year), equity_change,
+                    fill = equity_change < 0)) +
+  geom_col(width = .7, show.legend = FALSE) +
+  scale_fill_manual(values = c("FALSE" = "#9B958D", "TRUE" = "#a4770e")) +
+  geom_hline(yintercept = -100, linetype = "dotted", colour = "#7a1f1f") +
+  annotate("text", x = 2.2, y = -92, size = 3, colour = "#7a1f1f",
+           label = "−100% = the entire down payment") +
+  labs(title = "V3 · The same correction, one event per purchase year",
+       subtitle = "THE LOGIC: 'the market corrected' is one sentence. On household ledgers it is a dozen different events,\nfrom 'gave back some gains' to 'all of our savings'.",
+       x = "Year the family bought (20% down)", y = "Change in the family's equity (%)",
+       caption = paste("HOW TO READ: bars near zero barely noticed; deep amber bars lived a different event entirely.",
+       "CONTEXT: the aggregate line (V1) contains all of these and reveals none of them.",
+       "DRAFT — SYNTHETIC index; production computes this from CREA/Teranet monthly series.", sep = "\n"))
+```
+
+## The order in which losses arrive
+
+This asymmetry is not an accident of arithmetic; it is a design, in three layers.
+First loss: the owner's equity. Second: the default insurance that small-downpayment
+borrowers themselves paid for. Third: in most provinces, mortgages are full recourse —
+a shortfall can follow the borrower beyond the house.
+<!-- ⚠ verify recourse rules by province (AB/SK differ) before publication -->
+The bank's ledger sits behind all three. Described, not judged: the system is built so
+that the people in the house absorb the event first.
+
+```{r v4-ladder, fig.height=3.2}
+lad <- data.frame(layer = factor(c("1 · Owner's equity", "2 · Borrower-paid insurance",
+                                   "3 · Recourse on other assets", "4 · The bank"),
+                  levels = rev(c("1 · Owner's equity", "2 · Borrower-paid insurance",
+                                 "3 · Recourse on other assets", "4 · The bank"))),
+                  x1 = c(0, 20, 32, 44), x2 = c(20, 32, 44, 100))
+ggplot(lad) +
+  geom_rect(aes(xmin = x1, xmax = x2, ymin = as.numeric(layer) - .35,
+                ymax = as.numeric(layer) + .35),
+            fill = c("#D6D3D1", "#9B958D", "#a4770e", "#a4770e")[4:1]) +
+  scale_y_continuous(breaks = 1:4, labels = levels(lad$layer)) +
+  labs(title = "V4 · Who absorbs a decline, in order",
+       subtitle = "THE LOGIC: losses travel a designed sequence before reaching the lender's ledger.",
+       x = "Depth of decline absorbed →", y = NULL,
+       caption = "HOW TO READ: schematic, not to scale. CONTEXT: description of the contract structure, not an accusation of anyone.")
+```
+
+## Honesty about the way up
+
+The same 5:1 leverage produced the gains of 2015–2022 — the mechanism has no
+direction. Families who bought early rode the multiplier up before anyone rode it down.
+This post describes a lens, not a villain.
+
+## The clock that makes paper losses real
+
+A Canadian mortgage renews roughly every five years. A family that never sells still
+meets today's rates on a schedule — the unrealized event has an appointment with the
+household's cash flow. <!-- ⚠ verify current BoC renewal-wave figures; V6 chart from
+Bank of Canada Valet series to be added at build -->
+
+## This was never about housing
+
+Replace "national price index" with "company revenue," and "purchase-year cohorts"
+with "customer segments," and reread V1 and V3. An aggregate can be perfectly accurate
+while the event happens entirely inside its distribution — the same pattern as
+[the Nokia case](#), where every KPI was green while the ground moved.
+
+## What the data could not have told you
+
+- Sometimes data alone is hard to place — *where* is it acting? **More data is not
+  more understanding.** Ten more aggregate indicators would have made the borrowed
+  label more confident, not more correct.
+- You need to understand the **Event**, because the Event is what influences things;
+  data is a tool that describes reality — and like any description, it may simply
+  not be correct about what it is describing.
+
+*Every number in this post can be challenged interactively — pick your own purchase
+year, down payment, and city: [explore() →](#) (the app runs on the identical data
+files this post was rendered from).*
