@@ -886,6 +886,78 @@ h1.eh-headline {
 
 .eh-manifesto-accent { color: $eh-accent; }
 
+// =====================================================
+// THE SHIFT — the Map vs the Events (replaces the old
+// single-line manifesto). Draft copy — content only, not
+// final. Mirrors the hero's text/visual split so it reads
+// as part of the same page, not a bolted-on block.
+// =====================================================
+
+// =====================================================
+// THE SHIFT — short statement (left) + full explanation
+// (right), ending on the map question. Aligned to the
+// same width/margins as the hero above it. Draft copy —
+// content only, not final.
+// =====================================================
+
+.eh-shift {
+  max-width: min(1440px, 96vw);
+  margin: 0 auto;
+  padding: 2.5rem clamp(1.25rem, 3vw, 2.5rem) 2.5rem;
+  border-top: 0.5px solid $eh-border-hairline;
+}
+
+.eh-shift-row {
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.eh-shift-row + .eh-shift-row {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 0.5px solid $eh-border-subtle;
+}
+
+.eh-shift-lead {
+  flex: 0 0 clamp(200px, 28%, 320px);
+  border-right: 0.5px solid $eh-border-subtle;
+
+  @media (max-width: 768px) {
+    border-right: none;
+    border-bottom: 0.5px solid $eh-border-subtle;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.eh-shift-lead-text {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+  color: $eh-heading;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.eh-shift-detail {
+  flex: 1;
+}
+
+.eh-shift-detail-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $eh-text;
+  margin: 0;
+}
+
+.eh-shift-accent {
+  font-style: italic;
+  color: $eh-accent;
+}
+
 // Follow strip — slim, machine voice
 .eh-follow {
   max-width: min(1000px, 92vw);
@@ -1162,3 +1234,188 @@ h1.eh-page-title {
 }
 
 .eh-cta-cols .eh-btn { min-width: 0; width: 100%; }
+
+
+// =====================================================
+// HOMEPAGE — Hook, Questions Change, What Already Works, idea rows
+// Same container as the hero and the former .eh-shift section.
+// Items marked .is-soon point to pages that do not exist yet.
+// =====================================================
+
+.eh-tldr-label {
+  font-family: $font-family-monospace;
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: $eh-faint;
+  margin-right: 0.6rem;
+}
+
+.eh-open,
+.eh-rows {
+  max-width: min(1440px, 96vw);
+  margin: 0 auto;
+  padding: 2.5rem clamp(1.25rem, 3vw, 2.5rem) 2.5rem;
+  border-top: 0.5px solid $eh-border-hairline;
+}
+
+.eh-rows { padding-top: 0; border-top: none; }
+
+// Hook: centered, title-like
+h2.eh-hook {
+  text-align: center;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 500;
+  color: $eh-heading;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0 auto 2.5rem;
+  padding: 0;
+  border: none;
+  max-width: 900px;
+  text-wrap: balance;
+}
+.eh-hook-accent { color: $eh-accent; }
+
+// Questions Change / What Already Works: blog-style parts, all left-aligned,
+// full container width: title, TL;DR under it, then text.
+.eh-open-block {
+  text-align: left;
+}
+
+.eh-open-block + .eh-open-block {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 0.5px solid $eh-border-subtle;
+}
+
+h2.eh-open-title {
+  text-align: left;
+  font-size: clamp(1.35rem, 2.1vw, 1.7rem);
+  font-weight: 500;
+  color: $eh-heading;
+  letter-spacing: -0.2px;
+  margin: 0 0 0.9rem;
+  padding: 0;
+  border: none;
+}
+
+.eh-open-tldr {
+  text-align: left;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  color: $eh-strong;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  padding: 0.1rem 0 0.1rem 1rem;
+  border-left: 2px solid $eh-accent;
+}
+
+.eh-open-text {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: $eh-text;
+  margin: 0;
+}
+
+// Idea rows: same two-column geometry as the former .eh-shift rows
+.eh-row {
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: flex-start;
+
+  @media (max-width: 768px) { flex-direction: column; }
+}
+
+.eh-row + .eh-row {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 0.5px solid $eh-border-subtle;
+}
+
+.eh-row-left {
+  flex: 0 0 clamp(200px, 28%, 320px);
+  border-right: 0.5px solid $eh-border-subtle;
+  padding-right: 1.5rem;
+
+  @media (max-width: 768px) {
+    flex: none;
+    border-right: none;
+    border-bottom: 0.5px solid $eh-border-subtle;
+    padding: 0 0 1.5rem;
+  }
+}
+
+.eh-row-right { flex: 1; }
+
+h2.eh-row-title {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+  color: $eh-heading;
+  line-height: 1.4;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  border: none;
+}
+
+.eh-row-tldr {
+  font-size: 0.92rem;
+  color: $eh-strong;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.eh-row-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $eh-text;
+  margin: 0 0 1rem;
+}
+
+// Business Value: executive path, distinct from chips
+.eh-value-btn {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: $eh-accent;
+  border: 1px solid $eh-accent;
+  border-radius: $border-radius;
+  padding: 0.4rem 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover { background-color: rgba($eh-accent, 0.1); color: $eh-accent-hover; text-decoration: none; }
+
+  &.is-soon {
+    border-color: $eh-border;
+    color: $eh-muted;
+    cursor: default;
+    &:hover { background-color: transparent; color: $eh-muted; }
+  }
+}
+
+// Sub-topic chips: technical path
+.eh-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+.eh-chip {
+  display: inline-block;
+  font-family: $font-family-monospace;
+  font-size: 0.78rem;
+  color: $eh-strong;
+  background-color: $card-bg;
+  border: 0.5px solid $eh-border;
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover { border-color: $eh-accent; color: $eh-accent; text-decoration: none; }
+
+  &.is-soon {
+    color: $eh-muted;
+    border-style: dashed;
+    cursor: default;
+    &:hover { border-color: $eh-border; color: $eh-muted; }
+  }
+}

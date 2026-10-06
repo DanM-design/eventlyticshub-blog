@@ -192,6 +192,41 @@ listing:
   </script>
   </div>
 </section>
+
+<section class="eh-shift">
+  <div class="eh-shift-row">
+    <div class="eh-shift-lead">
+      <p class="eh-shift-lead-text">There are new events now, with higher volume, velocity, and variety.</p>
+    </div>
+    <div class="eh-shift-detail">
+      <p class="eh-shift-detail-text">The world now produces events in higher volume, at higher velocity, and in more variety than a few years ago. Most maps &mdash; the warehouse, the reports, the dashboards &mdash; are revised once a year, at the regular planning cycle. When events move faster than that, parts of the map fall behind without anyone deciding that they should. <span class="eh-shift-accent">Is your map &mdash; data, infrastructure, analytics &mdash; updated often enough to keep up?</span></p>
+    </div>
+  </div>
+  <div class="eh-shift-row">
+    <div class="eh-shift-lead">
+      <p class="eh-shift-lead-text">Signals now arrive before the reports that are meant to explain them.</p>
+    </div>
+    <div class="eh-shift-detail">
+      <p class="eh-shift-detail-text">A supplier delay shows up in a chat thread, a sensor log, or a news alert days before it reaches the monthly report. By the time the official number lands, the decision it was meant to inform has often already been made. <span class="eh-shift-accent">How long is the gap between when something happens and when your reports admit it?</span></p>
+    </div>
+  </div>
+  <div class="eh-shift-row">
+    <div class="eh-shift-lead">
+      <p class="eh-shift-lead-text">Many of the events that matter most were never part of the original design.</p>
+    </div>
+    <div class="eh-shift-detail">
+      <p class="eh-shift-detail-text">Data models are built around the questions people knew to ask at the time. New products, new channels, and new risks generate events that fall outside those models, so they are dropped, flattened into an &ldquo;other&rdquo; bucket, or never captured at all. <span class="eh-shift-accent">Which events in your business have no place to land?</span></p>
+    </div>
+  </div>
+  <div class="eh-shift-row">
+    <div class="eh-shift-lead">
+      <p class="eh-shift-lead-text">Faster data does not help if the questions are still from last year.</p>
+    </div>
+    <div class="eh-shift-detail">
+      <p class="eh-shift-detail-text">Streaming pipelines and real-time dashboards can shrink latency to seconds, but they still answer the questions that were written into them. When the environment shifts, the speed is applied to the wrong measures. <span class="eh-shift-accent">When did you last change what you measure, not just how quickly you measure it?</span></p>
+    </div>
+  </div>
+</section>
 ```
 
 ::: {.eh-section}
@@ -201,124 +236,6 @@ listing:
 :::
 
 :::
-
-```{=html}
-<section class="eh-open">
-  <h2 class="eh-hook">A data platform answers the questions it was built for. <span class="eh-hook-accent">Business reality keeps adding new ones.</span></h2>
-  <div class="eh-open-block" id="questions-change">
-    <h2 class="eh-open-title">Questions Change</h2>
-    <p class="eh-open-tldr"><span class="eh-tldr-label">tl;dr</span>A BI platform reflects the questions of the time it was designed. Business questions keep changing.</p>
-    <p class="eh-open-text">Data models are built around the questions people knew to ask at the time. New products, new channels, and new risks generate events that fall outside those models, so they are dropped, flattened into an &ldquo;other&rdquo; bucket, or never captured at all. Streaming pipelines and real-time dashboards shorten latency, but they still answer the questions that were written into them.</p>
-  </div>
-  <div class="eh-open-block" id="what-already-works">
-    <h2 class="eh-open-title">What Already Works</h2>
-    <p class="eh-open-tldr"><span class="eh-tldr-label">tl;dr</span>The warehouse, BI and semantic models remain the governed source for finance, HR and other well-defined domains. The proposal builds on them.</p>
-    <p class="eh-open-text">The warehouse and dashboards do what they were designed for, and they stay. What is proposed is a complementary layer: when an event outside the predefined vocabulary proves to matter, it is promoted into the existing governed layer, as a new row in the warehouse and not a new warehouse.</p>
-  </div>
-</section>
-<!--
-  Links: items marked <span class="eh-chip is-soon"> and <span class="eh-value-btn is-soon"> point to
-  pages that do not exist yet. To activate one, change the <span ...> into
-  <a class="eh-chip" href="page.html"> (or <a class="eh-value-btn" href="...">).
--->
-<section class="eh-rows">
-  <article class="eh-row" id="early-signals">
-    <div class="eh-row-left">
-      <h2 class="eh-row-title">Early Signals</h2>
-      <p class="eh-row-tldr"><span class="eh-tldr-label">tl;dr</span>Signals appear before an event is recognized. This section covers how they are detected, how they are missed, and how fast they become events.</p>
-      <span class="eh-value-btn is-soon">Business Value<span aria-hidden="true"> &rarr;</span></span>
-    </div>
-    <div class="eh-row-right">
-      <p class="eh-row-text">A supplier delay shows up in a chat thread, a sensor log, or a news alert days before it reaches the monthly report. This section covers how early signals are detected, how they are missed, and how quickly they become recognized events.</p>
-      <div class="eh-chips">
-        <span class="eh-chip is-soon">Weak signals</span>
-        <span class="eh-chip is-soon">Missed signals</span>
-        <span class="eh-chip is-soon">Signal-to-event speed</span>
-        <span class="eh-chip is-soon">Noise</span>
-      </div>
-    </div>
-  </article>
-  <article class="eh-row" id="events">
-    <div class="eh-row-left">
-      <h2 class="eh-row-title">Events</h2>
-      <p class="eh-row-tldr"><span class="eh-tldr-label">tl;dr</span>How events are defined, how their importance shifts, and which events are modeled.</p>
-      <span class="eh-value-btn is-soon">Business Value<span aria-hidden="true"> &rarr;</span></span>
-    </div>
-    <div class="eh-row-right">
-      <p class="eh-row-text">Which events exist, how they are defined, and how much they matter all shift as business processes change. This section covers how events are recognized, what context gives them meaning, and which of them are modeled.</p>
-      <div class="eh-chips">
-        <span class="eh-chip is-soon">Recognition</span>
-        <span class="eh-chip is-soon">Context</span>
-        <span class="eh-chip is-soon">Patterns</span>
-        <span class="eh-chip is-soon">Modeled and unmodeled</span>
-      </div>
-    </div>
-  </article>
-  <article class="eh-row" id="exploration-layer">
-    <div class="eh-row-left">
-      <h2 class="eh-row-title">Exploration Layer</h2>
-      <p class="eh-row-tldr"><span class="eh-tldr-label">tl;dr</span>Signals and events are explored and analyzed to decide which should become events in BI, the data warehouse and analytics.</p>
-      <span class="eh-value-btn is-soon">Business Value<span aria-hidden="true"> &rarr;</span></span>
-    </div>
-    <div class="eh-row-right">
-      <p class="eh-row-text">Signals and noise are examined to decide whether they describe something that should become a known event. Events that are confirmed move on to the layers where BI, analytics, visualizations and KPIs are built.</p>
-      <div class="eh-chips">
-        <span class="eh-chip is-soon">Signal exploration</span>
-        <span class="eh-chip is-soon">Noise exploration</span>
-        <span class="eh-chip is-soon">Event decision</span>
-        <span class="eh-chip is-soon">Prior art</span>
-      </div>
-    </div>
-  </article>
-  <article class="eh-row" id="signal-to-event-platform-architecture">
-    <div class="eh-row-left">
-      <h2 class="eh-row-title">Signal-to-Event Platform Architecture</h2>
-      <p class="eh-row-tldr"><span class="eh-tldr-label">tl;dr</span>A separate layer connected to the existing platform layers: what it reads from them, what it writes back, and how events move into the warehouse and analytics.</p>
-      <span class="eh-value-btn is-soon">Business Value<span aria-hidden="true"> &rarr;</span></span>
-    </div>
-    <div class="eh-row-right">
-      <p class="eh-row-text">The layer sits beside the existing platform layers and connects to them. It reads from raw and curated data and writes confirmed events back toward the warehouse, semantic models and analytics.</p>
-      <div class="eh-chips">
-        <span class="eh-chip is-soon">Existing layers</span>
-        <span class="eh-chip is-soon">Connections</span>
-        <span class="eh-chip is-soon">Event-driven architecture</span>
-        <span class="eh-chip is-soon">Events as facts</span>
-      </div>
-    </div>
-  </article>
-  <article class="eh-row" id="knowledge-recipe">
-    <div class="eh-row-left">
-      <h2 class="eh-row-title">Knowledge Recipe</h2>
-      <p class="eh-row-tldr"><span class="eh-tldr-label">tl;dr</span>For any organization, analytical knowledge comes from one recipe, not from separate BI, analytics and AI efforts: a question, the events and data, the methods and tools, and a status that records how far it has been validated.</p>
-      <span class="eh-value-btn is-soon">Business Value<span aria-hidden="true"> &rarr;</span></span>
-    </div>
-    <div class="eh-row-right">
-      <p class="eh-row-text">A recipe combines the question, the events and data, the methods and tools, and a validation status. Each recipe moves through exploration, validation and promotion.</p>
-      <div class="eh-chips">
-        <span class="eh-chip is-soon">Recipe parts</span>
-        <span class="eh-chip is-soon">Promotion</span>
-        <span class="eh-chip is-soon">Knowledge drift</span>
-        <span class="eh-chip is-soon">Knowledge inertia</span>
-      </div>
-    </div>
-  </article>
-  <article class="eh-row" id="cases">
-    <div class="eh-row-left">
-      <h2 class="eh-row-title">Cases</h2>
-      <p class="eh-row-tldr"><span class="eh-tldr-label">tl;dr</span>Nokia, Sears, customer interaction, medical R&amp;D and logistics, each told as signal, event, knowledge and outcome.</p>
-    </div>
-    <div class="eh-row-right">
-      <p class="eh-row-text">Each case follows the same pattern, so the cases can be compared with one another.</p>
-      <div class="eh-chips">
-        <span class="eh-chip is-soon">Nokia</span>
-        <span class="eh-chip is-soon">Sears</span>
-        <span class="eh-chip is-soon">Customer interaction</span>
-        <span class="eh-chip is-soon">Logistics</span>
-      </div>
-    </div>
-  </article>
-</section>
-```
 
 ```{=html}
 <section class="eh-section">
