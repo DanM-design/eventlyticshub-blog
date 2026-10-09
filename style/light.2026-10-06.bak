@@ -4,16 +4,16 @@
 // Same variable names as dark.scss — base.scss works with either.
 
 // Semantic palette
-$eh-bg:            #FAF8F5;
+$eh-bg:            #F7F7F7;
 $eh-surface:       #FFFFFF;
-$eh-border-subtle: #E7E2DA;
-$eh-border:        #D6D0C6;
-$eh-border-hover:  #A8A29E;
-$eh-faint:         #78716C;
-$eh-muted:         #78716C;
-$eh-text:          #44403C;
-$eh-strong:        #292524;
-$eh-heading:       #1C1917;
+$eh-border-subtle: #E2E2E2;
+$eh-border:        #D4D4D4;
+$eh-border-hover:  #AAAAAA;
+$eh-faint:         #8A8A8A;
+$eh-muted:         #8A8A8A;
+$eh-text:          #555555;
+$eh-strong:        #3D3D3D;
+$eh-heading:       #1A1A1A;
 $eh-accent:        #92400E;   // darker amber — readable on white
 $eh-accent-hover:  #78350F;
 $eh-code-bg:       #FFFFFF;
@@ -38,9 +38,9 @@ $code-block-bg: $eh-code-bg;
 $toc-active-border: $eh-accent;
 
 // Design-system tokens (light)
-$eh-surface-quiet:  #FDFCFA;
+$eh-surface-quiet:  #FCFCFC;
 $eh-surface-lit:    #FFFFFF;
-$eh-border-hairline:#EEE9E1;
+$eh-border-hairline:#ECECEC;
 $eh-accent-dim:     #a16207;
 $eh-chaos:          #C9C4BE;
 $eh-chaos-hi:       #9B958D;

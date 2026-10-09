@@ -36,26 +36,16 @@ body {
 
 .navbar {
   background-color: $navbar-bg !important;
-  border-bottom: 1px solid $eh-border-subtle;
+  border-bottom: 0.5px solid $eh-border-subtle;
   padding: 0.6rem 1.5rem;
   min-height: auto;
 }
 
 .navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
   color: $eh-heading !important;
   letter-spacing: -0.3px;
-
-  img, .navbar-logo {
-    height: 28px;
-    max-height: 28px;
-    width: auto;
-    margin: 0;
-  }
 }
 
 // Navbar links: quiet mono wayfinding (e.g. "work with me")
@@ -69,13 +59,6 @@ body {
     letter-spacing: 0.3px;
 
     &:hover { color: $eh-strong; }
-  }
-
-  // The one call to action: accent colour
-  .navbar-nav .nav-link[href*="work-with-me"] {
-    color: $eh-accent;
-
-    &:hover { color: $eh-accent-hover; text-decoration: underline; text-underline-offset: 3px; }
   }
 }
 
@@ -1093,8 +1076,6 @@ h1.eh-headline {
 .eh-page-head {
   max-width: 780px;
   margin: 0.5rem 0 1.75rem;
-  border-left: 4px solid $eh-accent;
-  padding: 0.15rem 0 0.15rem 1rem;
 }
 
 h1.eh-page-title {

@@ -1,0 +1,24 @@
+---
+title: ""
+toc: false
+listing:
+  id: blog-listing
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+  page-size: 20
+  fields: [title, description, categories, date, reading-time]
+---
+
+```{=html}
+<header class="eh-page-head">
+  <div class="eh-section-label">read()</div>
+  <h1 class="eh-page-title">The analyses</h1>
+  <p class="eh-page-sub">Analyses of the events systems weren&rsquo;t designed to watch &mdash; with the R code, and, where it earns it, a live dashboard to challenge the conclusions.</p>
+</header>
+```
+
+::: {#blog-listing .eh-featured-river}
+:::

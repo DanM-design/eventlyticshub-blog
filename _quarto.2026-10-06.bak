@@ -1,0 +1,88 @@
+# --------------------------------------------------
+# _quarto.yml — EventlyticsHub
+# Structure identical to your repo. Two changes only,
+# both marked CHANGED below.
+# --------------------------------------------------
+
+project:
+  type: website
+
+website:
+  title: "Event Analytics Hub"
+  site-url: https://www.eventlyticshub.com
+  page-navigation: true
+  open-graph: true
+  cookie-consent:
+    type: express
+    style: simple
+    palette: dark
+  search: true
+
+  navbar:
+    pinned: true
+    right:
+      - text: "work with me \u2192"
+        href: work-with-me.qmd
+
+  sidebar:
+    title: ""
+    style: docked
+    align: left
+    collapse-level: 2
+    contents:
+      - text: "Explore the data \u2192"
+        href: explore.qmd
+      - text: "Read the analysis"
+        href: blog.qmd
+      - text: "---"
+      - section: "Getting started"
+        contents:
+          - text: "What are events?"
+            href: guide/getting-started/what-are-events.qmd
+          - text: "Why event-driven?"
+            href: guide/getting-started/why-event-driven.qmd
+      - section: "Core concepts"
+        contents:
+          - text: "Event models"
+            href: "#"
+          - text: "Event types"
+            href: "#"
+          - text: "Streams vs snapshots"
+            href: "#"
+      - section: "Architecture"
+        contents:
+          - text: "Modern data stack"
+            href: "#"
+          - text: "R + Python interop"
+            href: "#"
+      - section: "Dashboards"
+        contents:
+          - text: "Dashboard design"
+            href: guide/dashboards/dashboard-design.qmd
+
+  page-footer:
+    left: "© 2026 Dan Manastireanu"
+    center: "R · Shiny · Quarto · Docker"
+    right: "Powered by [Quarto](https://quarto.org/)"
+
+format:
+  html:
+    grid:
+      sidebar-width: 250px
+      body-width: 1000px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    theme:
+      dark: [darkly, style/dark.scss, style/base.scss]
+      light: [flatly, style/light.scss, style/base.scss]
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    code-fold: show
+    code-copy: true
+    fontsize: 1.05rem
+    linestretch: 1.7
+
+execute:
+  freeze: auto
+  cache: false

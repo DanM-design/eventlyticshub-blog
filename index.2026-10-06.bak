@@ -5,9 +5,10 @@ toc: false
 page-layout: full
 listing:
   id: latest-analyses
-  contents:
-    - posts/2026-05-01-welcome/index.qmd
+  contents: posts
+  sort: "date desc"
   type: default
+  max-items: 3
   fields: [title, description, date, categories]
 ---
 
@@ -194,6 +195,8 @@ listing:
 ```
 
 ::: {.eh-section}
+<div class="eh-section-label">latest analyses</div>
+
 ::: {#latest-analyses}
 :::
 

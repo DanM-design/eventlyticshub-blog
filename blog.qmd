@@ -6,19 +6,62 @@ listing:
   contents: posts
   sort: "date desc"
   type: default
-  categories: true
+  categories: false
   feed: true
-  page-size: 20
-  fields: [title, description, categories, date, reading-time]
+  fields: [title]
 ---
 
 ```{=html}
 <header class="eh-page-head">
   <div class="eh-section-label">read()</div>
-  <h1 class="eh-page-title">The analyses</h1>
-  <p class="eh-page-sub">Analyses of the events systems weren&rsquo;t designed to watch &mdash; with the R code, and, where it earns it, a live dashboard to challenge the conclusions.</p>
+  <h1 class="eh-page-title">Read</h1>
+  <p class="eh-page-sub">General terms used across the blog. Every page is in the menu on the left.</p>
 </header>
+
+<!--
+  Terms: each one is meant to link to its Core Concepts page once that page exists.
+  To activate a link, wrap the term name in <a href="page.html">...</a>.
+-->
+<section class="eh-terms">
+  <div class="eh-term-row">
+    <span class="eh-term-name">Signal</span>
+    <p class="eh-term-def">A raw indication that something may be happening, before it has been recognized or classified as an event. A spike in a chat thread, a sensor reading and a news alert are examples.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Noise</span>
+    <p class="eh-term-def">Data that does not describe the event under study. What counts as noise depends on the question, so the same data can be signal for another use.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Event</span>
+    <p class="eh-term-def">A recognized occurrence with a defined meaning, a time and a context, which an organization can record and analyze.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Modeled event</span>
+    <p class="eh-term-def">An event type with a defined place in the data warehouse, usually a fact table with its dimensions.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Unmodeled event</span>
+    <p class="eh-term-def">An event that occurs and can be detected but has no defined place in the data warehouse.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Data warehouse and BI</span>
+    <p class="eh-term-def">The governed layer where modeled events are stored and where reports, dashboards and KPIs are built from them.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Exploration Layer</span>
+    <p class="eh-term-def">A layer where signals and noise are explored and analyzed to decide which should become events in BI, the data warehouse and analytics.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Knowledge Recipe</span>
+    <p class="eh-term-def">A documented combination of a question, the events and data, the methods and tools, and a validation status, used to produce and promote analytical knowledge.</p>
+  </div>
+  <div class="eh-term-row">
+    <span class="eh-term-name">Exploratory Data Analysis</span>
+    <p class="eh-term-def">The open-ended examination of data to find patterns, anomalies and questions before a model or report is fixed.</p>
+  </div>
+</section>
 ```
 
-::: {#blog-listing .eh-featured-river}
+<!-- The listing below is hidden. It only exists so Quarto keeps generating the RSS feed (blog.xml). -->
+::: {#blog-listing .eh-feed-only}
 :::

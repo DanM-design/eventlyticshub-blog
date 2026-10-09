@@ -18,12 +18,8 @@ website:
     palette: dark
   search: true
 
-  favicon: images/mark-small.svg
-
   navbar:
     pinned: true
-    logo: images/mark.svg
-    logo-alt: "Event Analytics Hub"
     right:
       - text: "work with me \u2192"
         href: work-with-me.qmd
